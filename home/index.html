@@ -6,37 +6,60 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="mobile-web-app-capable" content="yes">
 	<title>Writing Service : 홈</title>
-	<link rel="stylesheet" href="../stat/main.css" media="screen">
 	<link rel="stylesheet" href="style.css" media="screen">
 </head>
 <body>
 	<header>
-		<div class="subheader container">
-			<a class="logo">Writing-Service</a>
-			<a class="setting">setting</a>
+		<div class="header-primary_header aligned">
+			<img class="logo" alt="logo"/>
+			<a class="action">setting</a>
 		</div>
 		<hr>
-		<nav class="header-menu container">
-			<a>writing</a>
-			<a>library</a>
-			<a>newsfeed</a>
+		<nav class="header-nav aligned">
+			<a class="item item--here">writing</a>
+			<a class="item">libraray</a>
+			<a class="item">newsfeed</a>
 		</nav>
 	</header>
 	<main>
-		<div class="container">
-			<figure>
-				<h6>
-					<p>[DEADLINE]</p>
-					<a class="writing">writing</a>
-				</h6>
-				<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</article>
-				<figcaption>
-					<p>[author]</p>
-					<p>[date]</p>
-				</figcaption>
-			</figure>
-			<h6 class="figure-textonly">+</h6>
+		<div class="inbox aligned">
+			<div class="card_spacing"></div>
+			<div class="card">
+				<div class="card-toolbar">
+					<span class="title">deadline</span>
+					<a class="action">write</a>
+				</div>
+				<div class="card-content">
+					<article class="card-article">
+						article
+					</article>
+					<div class="card-propertise">
+						<p>
+							<span class="author">author</span>
+						</p>
+						<p>
+							<span class="date">date</span>
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="card_spacing"></div>
 		</div>
 	</main>
+	<aside>
+		<div class="extensable_card">
+			<div class="card-toolbar">
+				<a class="zoom_control js-sizing"></a>
+				<span class="title">textnum</span>
+				<a class="action">menu</a>
+			</div>
+			<div class="card-content">
+				<article class="card-article" contenteditable="true">
+					크기 조절 가능.
+				</article>
+			</div>
+		</div>
+	</aside>
+	<script src="script.js"></script>
 </body>
 </html>
