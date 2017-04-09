@@ -3,6 +3,8 @@
 var toggleSize = document.querySelector('.js-sizing');
 var extsblCard = document.querySelector('.extensable_card');
 var body = document.body;
+var extsbleCardMenu = document.querySelector('.extsbl_card-menu');
+var extsbleCardMenuToggle = document.querySelector('#extsbl_card-menu_toggle');
 
 var mouseStartX = 0;
 var mouseStartY = 0;
@@ -32,7 +34,11 @@ function onMouseUpEl () {
 		extsblCard.style.height = `${preHeight + mouseStartY - event.pageY}px`;
 		isMoved = false;
 	}
+	if (extsbleCardMenuToggle.checked) {
+		extsbleCardMenuToggle.checked = false;
+	}
 }
 
 body.addEventListener('mouseup', onMouseUpEl);
 extsblCard.addEventListener('mouseup', onMouseUpEl);
+extsbleCardMenu.addEventListener('mouseup', evt => evt.stopPropagation());

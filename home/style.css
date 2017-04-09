@@ -34,6 +34,16 @@ body {
 	padding-right: 24px;
 }
 
+input.hidden {
+	width: 0;
+	height: 0;
+	pointer-events: none;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
 header {
 	width: 100%;
 	height: auto;
@@ -174,3 +184,41 @@ aside {
 	}
 
 		.extensable_card .card-toolbar { border-bottom: 1px solid #757575; }
+
+			.extensable_card .card-toolbar .action { position: relative; }
+
+.extsble_card-menu {
+	width: 100%;
+	height: 100vh;
+	max-height: 0;
+	overflow: hidden;
+	
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	display: flex;
+	flex-direction: column;
+	
+	transition: max-height .3s ease;
+}
+
+input:checked + .extsble_card-menu {
+	/* 메뉴 항목이 많아지면 max-height 값을 증가시킬 것 */
+	max-height: 80px;
+}
+
+.extsble_card-menu .item {
+	padding: 2px 0;
+	text-align-last: center;
+
+	background-color: #757575;
+	border: 1px solid #BDBDBD;
+	
+	font-size: 14px;
+}
+
+.extsble_card-menu .item.longtxt {
+	padding: 4px 0;
+	font-size: 12px;
+}
