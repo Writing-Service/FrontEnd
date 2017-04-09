@@ -21,7 +21,9 @@ html { width: 100%; height: 100%; }
 body {
 	width: 100%;
 	height: 100%;
+	
 	background-color: #E0E0E0;
+	
 	font-family: 'Roboto', 'sans-serif';
 }
 
@@ -34,14 +36,21 @@ body {
 	padding-right: 24px;
 }
 
+.layout_list {
+	list-style: none;
+}
+
 input.hidden {
 	width: 0;
 	height: 0;
-	pointer-events: none;
-	opacity: 0;
+	
 	position: fixed;
 	top: 0;
 	left: 0;
+	
+	opacity: 0;
+	
+	pointer-events: none;
 }
 
 header {
@@ -101,6 +110,8 @@ main {
 	width: 100%;
 	height: auto;
 }
+
+/* HOME */
 
 	.card_spacing {
 		height: 24px;
@@ -180,6 +191,7 @@ aside {
 		min-width: 240px;
 		min-height: 24px;
 		border: 1px solid #757575;
+		
 		overflow: hidden;
 	}
 
@@ -187,38 +199,133 @@ aside {
 
 			.extensable_card .card-toolbar .action { position: relative; }
 
-.extsble_card-menu {
-	width: 100%;
-	height: 100vh;
-	max-height: 0;
-	overflow: hidden;
-	
-	position: absolute;
-	top: 0;
-	left: 0;
-	
-	display: flex;
-	flex-direction: column;
-	
-	transition: max-height .3s ease;
-}
+			.extsble_card-menu {
+				width: 100%;
+				height: 100vh;
+				max-height: 0;
 
-input:checked + .extsble_card-menu {
-	/* 메뉴 항목이 많아지면 max-height 값을 증가시킬 것 */
-	max-height: 80px;
-}
+				position: absolute;
+				top: 0;
+				left: 0;
 
-.extsble_card-menu .item {
-	padding: 2px 0;
-	text-align-last: center;
+				display: flex;
+				flex-direction: column;
+				
+				overflow: hidden;
 
-	background-color: #757575;
-	border: 1px solid #BDBDBD;
-	
-	font-size: 14px;
-}
+				transition: max-height .3s ease;
+			}
 
-.extsble_card-menu .item.longtxt {
-	padding: 4px 0;
-	font-size: 12px;
-}
+			input:checked + .extsble_card-menu {
+				/* 메뉴 항목이 많아지면 max-height 값을 증가시킬 것 */
+				max-height: 80px;
+			}
+
+				.extsble_card-menu .item {
+					padding: 2px 0;
+					text-align-last: center;
+
+					background-color: #757575;
+					border: 1px solid #BDBDBD;
+
+					font-size: 14px;
+				}
+
+				.extsble_card-menu .item.longtxt {
+					padding: 4px 0;
+					font-size: 12px;
+				}
+
+/* LIBRARY */
+
+	.library_search {
+		width: 100%;
+		height: auto;
+		padding-top: 48px;
+		padding-bottom: 16px;
+	}
+
+		.library_search .item {
+			width: 100%;
+			height: auto;
+			padding: 8px;
+
+			display: flex;
+			align-content: center;
+		}
+
+			.library_search .item .title {
+				width: 96px;
+
+				flex-grow: 0;
+				flex-shrink: 0;
+
+				color: #757575;
+
+				text-align: center;
+				font-size: 20px;
+				font-weight: bold;
+				letter-spacing: 1px;
+			}
+
+			.library_search .item .input {
+				padding: 4px;
+				padding-bottom: 2px;
+				margin-right: 16px;
+
+				flex-grow: 1;
+				flex-shrink: 1;
+
+				background-color: transparent;
+				border-bottom: 2px solid #9E9E9E;
+				color: #757575;
+
+				font-size: 16px;
+				line-height: 1;
+			}
+
+			.library_search .item .action {
+				width: 32px;
+				height: 24px;
+				padding: 4px;
+
+				flex-grow: 0;
+				flex-shrink: 0;
+
+				background-color: #BDBDBD;
+			}
+
+	.library-list {
+		width: 100%;
+		height: auto;
+		padding: 16px 0;
+	}
+
+		.library-list .item {
+			width: 100%;
+			height: auto;
+			margin-bottom: 20px;
+
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			background-color: #9E9E9E;
+			color: #FFFFFF;
+		}
+
+			.library-list .item .title {
+				padding: 8px;
+
+				flex-grow: 1;
+				flex-shrink: 1;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.library-list .item .likes {
+				padding: 8px 32px;
+
+				flex-grow: 0;
+				flex-shrink: 0;
+			}
