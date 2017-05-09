@@ -38,6 +38,7 @@ icon {
     box-sizing: border-box;
     font: inherit;
     color: inherit;
+	outline: none;
 }
 
 html { width: 100%; height: 100%; }
@@ -60,17 +61,16 @@ body {
 .container {
 	max-width: 970px;
 	margin: auto;
+	padding: 0 16px;
 	
 	display: block;
+		
+	color: rgba(0, 0, 0, .54);
 }
 
-.card {
-	margin-top: 24px;
-	
-	background-color: rgb(255, 255, 255);
-	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
-	border-radius: 3px;
-}.mobile .card { margin-top: 20px; }
+.bottom-margin {
+	height: 128px;
+}
 
 header {
 	width: 100%;
@@ -80,23 +80,22 @@ header {
 	position: fixed;
 	top: 0;
 	left: 0;
+	z-index: 3;
 	
-	background-color: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, .92);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 }.mobile header {
 	height: 96px;
+	background-color: rgb(255, 255, 255);
 }
 
 	header .container {
 		height: 56px;
-		padding: 0 16px;
 		
 		display: flex;
 		align-items: center;
 		
 		position: relative;
-		
-		color: rgba(0, 0, 0, .54);
 	}.mobile header .container {
 		height: 48px;
 	}
@@ -151,9 +150,12 @@ header {
 		}
  
 /* show texts only on desktop ver. */
-.mobile .header__tabs span { display: none; }
-.header__tabs icon { display: none; }
-.mobile .header__tabs icon { display: inline-block; }
+.mobile .header__tabs span,
+.header__tabs icon,
+.backward { display: none; }
+
+.mobile .header__tabs icon,
+.mobile .backward { display: inline-block; }
 
 
 
@@ -166,3 +168,113 @@ main {
 }.mobile main {
 	padding-top: 96px;
 }
+
+
+.card {
+	margin-top: 24px;
+	
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+	border-radius: 3px;
+}.mobile .card { margin-top: 20px; }
+
+	.card .primary-header {
+		height: 56px;
+
+		position: relative;
+	}
+
+		.primary-header .author {
+			position: absolute;
+			top: 24px;
+			left: 16px;
+
+			font-size: 16px;
+			font-weight: 500;
+		}
+
+		.primary-header .date {
+			position: absolute;
+			bottom: 0;
+			left: 16px;
+
+			font-size: 12px;
+		}
+
+		.primary-header .chip {
+			width: 102px;
+			height: 32px;
+
+			position: absolute;
+			top: 24px;
+			right: 16px;
+
+			border-radius: 16px;
+			background-color: rgba(0, 0, 0, .16);
+		}
+
+			.chip__icon-wrap {
+				width: 32px;
+				height: 32px;
+				padding: 4px;
+				border-radius: 16px;
+				background-color: rgba(153, 153, 153, 1);
+				color: rgb(255, 255, 255);
+			}
+
+			.chip .deadline {
+				position: absolute;
+				top: 8px;
+				left: 40px;
+
+				font-size: 14px;
+			}
+
+	.card article {
+		padding: 20px 16px;
+		
+		text-align: justify;
+	}
+
+.card .editor {
+	padding: 20px 16px 48px 16px;
+	position: relative;
+}
+
+.editor textarea {
+	width: 100%;
+	min-height: 84px;
+	padding: 12px;
+	
+	resize: vertical;
+	
+	border: 2px solid rgba(0, 0, 0, .16);
+	border-radius: 2px;
+	
+	transition: border-color .2s ease;
+}
+
+.editor textarea:hover {
+	border-color: rgba(66, 165, 245, .54);
+}
+.editor textarea:focus {
+	border-color: rgba(66, 165, 245, 1);
+}
+
+
+.editor .types {
+	position: absolute;
+	bottom: 20px;
+	right: 16px;
+	
+	font-size: 12px;
+	
+	transition: color .2s ease,
+		font-weight .2s ease;
+}
+
+.editor .types--warning {
+	color: rgb(211, 47, 47);
+	font-weight: bold;
+}
+
