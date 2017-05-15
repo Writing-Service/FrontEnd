@@ -11,9 +11,10 @@ document.body.addEventListener('click', () => {
 });
 
 var $types = document.querySelector('.js--types'),
+	$editor = document.querySelector('.js--editor'),
 	isOverTyped = false;
 
-document.querySelector('textarea').addEventListener('keyup', evt => {
+function types(evt) {
 	let types = evt.target.value.length;
 	
 	$types.innerHTML = `${types}/700`;
@@ -25,4 +26,6 @@ document.querySelector('textarea').addEventListener('keyup', evt => {
 		$types.classList.remove('types--warning');
 		isOverTyped = false;
 	}
-});
+}
+
+$editor.addEventListener('keyup', types);
