@@ -163,26 +163,63 @@ header {
 
 
 
+/* Pre-defined styles */
 
-main {
-	height: 100%;
-	padding-top: 56px;
-	
-	display: block;
-}
-.mobile main {
-	padding-top: 96px;
-}
 
+.rtl {
+	text-align: right;
+}
 
 .card {
-	margin-top: 24px;
-	
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 	border-radius: 3px;
 }
-.mobile .card { margin-top: 20px; }
+
+.space-between {
+	height: 24px;
+}
+.mobile .space-between {
+	height: 20px;
+}
+.button {
+	min-width: 72px;
+	height: 36px;
+	padding: 10px 16px;
+	margin-left: 8px;
+	
+	display: inline-block;
+	
+	border-radius: 2px;
+	background-color: rgb(0, 150, 136);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+	color: rgb(255, 255, 255);
+	
+	font-size: 14px;
+	line-height: 16px;
+	text-align: center;
+}
+.mobile .button {
+	height: 32px;
+	padding: 9px 16px;
+	
+	font-size: 13px;
+	line-height: 14px;
+}
+.inactive.button {
+	opacity: .33;
+	pointer-events: none;
+}
+
+/* MAIN */
+
+main {
+	height: 100%;
+	padding-top: 56px;
+}
+.mobile main {
+	padding-top: 96px;
+}
 
 	.card .primary-header {
 		height: 56px;
@@ -285,4 +322,37 @@ main {
 		color: rgb(211, 47, 47);
 		font-weight: bold;
 	}
+
+.editor-action {
+	width: 360px;
+	height: 40px;
+	
+	display: flex;
+	align-items: center;
+	
+	float: right;
+}
+.mobile .editor-action {
+	width: 100%;
+	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+}
+
+.editor-action .item {
+	width: 100%;
+	padding: 8px 16px;
+	
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+}
+
+.editor-action .divider {
+	height: 24px;
+	border-right: 1px solid rgba(0, 0, 0, .16);
+	
+	flex-grow: 0;
+}
 
