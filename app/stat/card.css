@@ -1,0 +1,140 @@
+
+
+
+	.card .primary-header {
+		height: 56px;
+
+		position: relative;
+	}
+
+		.primary-header .author {
+			position: absolute;
+			top: 24px;
+			left: 16px;
+
+			font-size: 16px;
+			font-weight: 500;
+		}
+
+		.primary-header .date {
+			position: absolute;
+			bottom: 0;
+			left: 16px;
+
+			font-size: 12px;
+		}
+
+		.primary-header .chip {
+			width: auto;
+			height: 32px;
+			padding-right: 12px;
+
+			position: absolute;
+			top: 24px;
+			right: 16px;
+			
+			display: flex;
+
+			border-radius: 16px;
+			background-color: rgba(0, 0, 0, .16);
+		}
+
+			.chip__icon-wrap {
+				width: 32px;
+				height: 32px;
+				padding: 4px;
+				
+				border-radius: 16px;
+				background-color: rgba(153, 153, 153, 1);
+				color: rgb(255, 255, 255);
+			}
+
+			.chip .deadline {
+				height: 32px;
+				padding: 8px 0;
+				margin-left: 8px;
+				font-size: 14px;
+				line-height: 16px;
+			}
+
+	.card article {
+		padding: 20px 16px;
+		
+		text-align: justify;
+	}
+
+.card .editor {
+	padding: 20px 16px 48px 16px;
+	position: relative;
+}
+
+	.editor textarea {
+		width: 100%;
+		min-height: 84px;
+		padding: 12px;
+
+		resize: vertical;
+
+		border: 2px solid rgba(0, 0, 0, .16);
+		border-radius: 2px;
+
+		transition: border-color .2s ease;
+	}
+	.editor textarea:hover {
+		border-color: rgba(66, 165, 245, .54);
+	}
+	.editor textarea:focus {
+		border-color: rgba(66, 165, 245, 1);
+	}
+
+
+	.editor .types {
+		position: absolute;
+		bottom: 20px;
+		right: 16px;
+
+		font-size: 12px;
+
+		transition: color .2s ease,
+			font-weight .2s ease;
+	}
+	.editor .types--warning {
+		color: rgb(211, 47, 47);
+		font-weight: bold;
+	}
+
+.editor-action {
+	width: 360px;
+	height: 40px;
+	
+	display: flex;
+	align-items: center;
+	
+	float: right;
+}
+.mobile .editor-action {
+	width: 100%;
+	
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	
+	box-shadow: 0 0px 6px rgba(0, 0, 0, .3);
+}
+
+.editor-action .item {
+	width: 100%;
+	padding: 8px 16px;
+	
+	display: inline-block;
+	font-size: 14px;
+	text-align: center;
+}
+
+.editor-action .divider {
+	height: 24px;
+	border-right: 1px solid rgba(0, 0, 0, .16);
+	
+	flex-grow: 0;
+}
+
