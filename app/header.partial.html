@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>[title]</title>
+	<link rel="stylesheet" href="stat/layout.css">
+	<link rel="stylesheet" href="stat/header.css">
+</head>
+
+<body class="">
+
+<header>
+    <div class="header-layout container">
+        <a class="backward">
+            <i class="mobile-only material-icons">arrow_back</i>
+        </a>
+        <h1 class="header__title">[title]</h1>
+        
+        <nav class="header__tabs">
+            {{#header__tabs}}
+            <a class="tabs__item">
+                <i class="mobile-only material-icons">{{font_icon}}</i>
+                <span class="desktop-only">{{desc}}</span>
+            </a>
+            <a class="tabs__item">
+                <i class="mobile-only material-icons">library_books</i>
+                <span class="desktop-only">라이브러리</span>
+            </a>
+            <a class="tabs__item">
+                <i class="mobile-only material-icons">explore</i>
+                <span class="desktop-only">뉴스피드</span>
+            </a>
+            {{/header__tabs}}
+        </nav>
+        
+        <a class="header__pseudonym">
+            <span>필명</span>
+            <i class="material-icons">arrow_drop_down</i>
+        </a>
+    </div>
+</header>
+
+<main>
