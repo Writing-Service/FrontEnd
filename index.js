@@ -13,7 +13,7 @@ app.get(/([^/]*)(\/|\/index.html)$/, (req, res) => {
     let files;
 
     if ('partial' in req.query) {
-        files = fs.readFileSync(`app/${req.item}/index.html`);
+        files = [fs.readFileSync(`app/${req.item}/index.html`)];
     } else {
         files = [
             fs.readFileSync('app/header.partial.html'),

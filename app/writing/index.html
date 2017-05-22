@@ -7,46 +7,56 @@
 		<a class="button">글 받아오기</a>
 	</div>
 
-    <!-- 받아온 글 반복출력 영역 시작 -->
+    <!-- 받아온 글 반복 영역 시작 -->
     
 	<div class="space-between"></div>
 
-	<div class="card">
+	<div id="js--a-1" class="card presentation">
 		<div class="primary-header">
-			<h2 class="author">Author</h2>
-			<span class="date">Yesterday 5:09 PM</span>
-			<div class="chip">
-				<div class="chip__icon-wrap">
-					<icon>schedule</icon>
-				</div>
+			<h2 class="primary-text">Author</h2>
+			<span class="sub-title">Yesterday 5:09 PM</span>
+			<span class="timer-chip">
+				<i class="chip__icon">
+					<i class="material-icons">schedule</i>
+				</i>
                  <!-- 아이디 규칙 [js--d-#], dueto 규칙 [DD:HH:MM:SS] -->
-				<span id="js--d-1" class="deadline" dueto="23:07:33:00"></span>
-			</div>
+				<span id="js--d-1" class="chip__timer" dueto="23:07:33:00">checking...</span>
+			</span>
 		</div>
-		<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</article>
+		
+		<div class="sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 	</div>
 
-    <!-- 받아온 글 반복출력 영역 끝 -->
+    <!-- 받아온 글 반복 영역 끝 -->
+
+
+    <!-- 에디터 영역 시작 -->
+	
+	<div class="space-between"></div>
+	
+	<div class="card">
+		<div class="editor">
+			<textarea class="js--editor"></textarea>
+			<span class="js--types types ">0/700</span>
+		</div>
+	</div>
     
 	<div class="space-between"></div>
-
-	<div class="card">
-		<div class="primary-header">
-			<h2 class="author">Author</h2>
-			<span class="date">Yesterday 5:09 PM</span>
-			<div class="chip">
-				<div class="chip__icon-wrap">
-					<icon>schedule</icon>
-				</div>
-				<span id="js--d-2" class="deadline" dueto="21:21:33:00"></span>
-			</div>
+	
+	<div class="nocard">
+		<div class="card editor-action">
+			<a class="item">임시저장</a>
+			<i class="divider"></i>
+			<a class="item">작성완료</a>
+			<i class="divider"></i>
+			<a class="item">제출</a>
 		</div>
-		<article>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</article>
 	</div>
+
+    <!-- 에디터 영역 끝 -->
 	
 	<div class="bottom-margin"></div>
 </div>
 
 <script src="/stat/due.js"></script>
+<script src="/stat/writing.js"></script>

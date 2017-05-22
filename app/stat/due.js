@@ -40,7 +40,7 @@ window.setInterval( () => {
 
         //console.log(remain);
 
-        if (remain.dd < 0 && remain.hh <0 && remain.mm <0 && remain.ss < 0) {
+        if (remain.dd < 0) {
             res = 'DUE END';
         } else if (remain.dd == remain.hh && remain.hh == 0) {
             res = `${remain.mm}M ${remain.ss}S`;
