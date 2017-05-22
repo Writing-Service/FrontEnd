@@ -42,6 +42,7 @@ icon,
 	text-decoration: none;
     color: inherit;
 	outline: none;
+	-webkit-tap-highlight-color: none;
 }
 
 html { width: 100%; height: 100%; }
@@ -69,7 +70,7 @@ body {
 }
 
 .bottom-margin {
-	height: 256px;
+	height: 20vh;
 }
 
 .desktop .mobile-only { display: none; }
@@ -108,7 +109,7 @@ body {
 	font-size: 13px;
 	line-height: 14px;
 }
-.inactive.button {
+.inactive {
 	opacity: .33;
 	pointer-events: none;
 }

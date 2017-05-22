@@ -2,11 +2,9 @@
 
     <div class="space-between"></div>
 
-    <div class="card search">
-        <i class="material-icons">search</i>
-        <input type="text" placeholder="검색"/>
-        <i class="material-icons">clear</i>
-    </div>
+    <label for="js--search-text" class="card search">
+        <input id="js--search-text" class="search__text-field" type="text" placeholder="검색"/>
+    </label>
 
     <div class="space-between"></div>
 
@@ -21,7 +19,7 @@
 
         <div class="space-between"></div>
 
-        <div id="entryID" class="card library">
+        <div id="entryID" class="card library" index="1">
 
             <!-- 자신이 참여한 글 만족 표시
             <div class="give-star">
@@ -29,23 +27,12 @@
             </div>
             -->
 
-            <div class="thread">
-                <!-- 글묶음 반복 영역 시작 -->
-                
-                <!-- [js--t-1] ~ [js--t-7] 슬라이드 영역 -->
-                <div class="js--t-1">
-
-                    <div class="primary-header">
-                        <h2 class="primary-text">Author</h2>
-                        <span class="sub-title">Yesterday 5:09 PM</span>
-                    </div>
-
-                    <div class="sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-            
-                </div>
-
-                <!-- 글묶음 반복 영역 끝 -->
+            <div class="primary-header">
+                <h2 class="js--t-author primary-text">Author</h2>
+                <span class="js--t-date sub-title">Yesterday 5:09 PM</span>
             </div>
+
+            <div class="js--t-content sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
             <div class="action">
                 <div class="stars">
@@ -65,9 +52,9 @@
                 </div>
             </div>
 
-            <div class="desktop-only">
-                <i class="material-icons">chevron_left</i>
-                <i class="material-icons">chevron_right</i>
+            <div class="desktop-only swipe-pannel">
+                <i class="js--t-previous material-icons">chevron_left</i>
+                <i class="js--t-next material-icons">chevron_right</i>
             </div>
         </div>
 
