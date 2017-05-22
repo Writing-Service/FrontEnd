@@ -42,8 +42,14 @@ window.setInterval( () => {
 
         if (remain.dd < 0) {
             res = 'DUE END';
+
         } else if (remain.dd == remain.hh && remain.hh == 0) {
-            res = `${remain.mm}M ${remain.ss}S`;
+            if (remain.mm != 0)
+                res += `${remain.mm}M`;
+
+            if (remain.ss != 0)
+                res += ` ${remain.ss}S`;
+
         } else {
             if (remain.dd != 0)
                 res += `${remain.dd}D`;
@@ -53,6 +59,7 @@ window.setInterval( () => {
 
             if (remain.mm != 0)
                 res += ` ${remain.mm}M`;
+
         }
 
         if (t.innerHTML != res)
