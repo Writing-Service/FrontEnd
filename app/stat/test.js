@@ -1,6 +1,6 @@
 var isMobile = false;
 
-document.body.addEventListener('keypress', evt => {
+document.body.addEventListener('keypress', function(evt) {
 	if (evt.keyCode != 13) // Enter
 		return;
 
@@ -72,9 +72,8 @@ function threadHandler(evt) {
 
 	let nextBtn = document.querySelector(`#${thread.id} .js--t-next`),
 		prevBtn = document.querySelector(`#${thread.id} .js--t-previous`),
+		helper = document.querySelector(`#${thread.id} .js--t-get-bounding`),
 		loadNext = nextBtn == evt.target;
-
-		console.log(loadNext);
 
 	let article = {
 		id : thread.id,
@@ -91,7 +90,8 @@ function threadHandler(evt) {
 		if (article.index >= 7) {
 			nextBtn.classList.add('inactive');
 		}
-	} else {
+	}
+	else {
 		article.index--;
 		nextBtn.classList.remove('inactive');
 		
@@ -102,7 +102,28 @@ function threadHandler(evt) {
 
 	thread.setAttribute('index', article.index);
 
-	article.author.innerHTML = data[article.index].author;
-	article.date.innerHTML = data[article.index].date;
-	article.content.innerHTML = data[article.index].content;
+	helper.innerHTML = data[article.index].content;
+
+	let startHeight = `${article.content.getBoundingClientRect().height}px`,
+		endHeight = `${helper.getBoundingClientRect().height}px`;
+
+
+	article.content.style.height = startHeight;
+
+	//animation starts
+	article.content.classList.add('content--swapping');
+
+	setTimeout(function() {
+		article.content.style.height = endHeight;
+
+		article.author.innerHTML = data[article.index].author;
+		article.date.innerHTML = data[article.index].date;
+		article.content.innerHTML = data[article.index].content;
+	}, 200);
+		
+
+	//animation ends
+	setTimeout(function() {
+		article.content.classList.remove('content--swapping');
+	}, 600);
 }

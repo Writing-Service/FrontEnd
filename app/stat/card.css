@@ -81,10 +81,29 @@
 
 .library .sub-text {
     padding: 16px;
+
+    transition: height .2s ease,
+                opacity .2s ease;
 }
 .mobile .library .sub-text {
     border-bottom: 1px solid rgba(0, 0, 0, .08);
 }
+
+.content--swapping {
+    opacity: 0;
+}
+
+/* content swaping animation helper */
+.sub-text-helper {
+    padding: 16px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+}
+
 
 .library .action {
     padding: 16px;
