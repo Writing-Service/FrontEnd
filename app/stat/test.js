@@ -61,7 +61,7 @@ const data = [
 document.querySelector('.js--t-previous').addEventListener('click', threadHandler);
 document.querySelector('.js--t-next').addEventListener('click', threadHandler);
 
-function threadHandler(evt, a) {
+function threadHandler(evt) {
 
 	let thread = evt.target;
 
@@ -71,9 +71,11 @@ function threadHandler(evt, a) {
 	// thread.id를 이용해서 서버에서 글 리스트를 가져옴.
 
 	let nextBtn = document.querySelector(`#${thread.id} .js--t-next`),
+		nextBtnIcon = document.querySelector(`#${thread.id} .js--t-next .material-icons`),
 		prevBtn = document.querySelector(`#${thread.id} .js--t-previous`),
 		helper = document.querySelector(`#${thread.id} .js--t-get-bounding`),
-		loadNext = a || nextBtn == evt.target;
+		
+		loadNext = nextBtn == evt.target || nextBtnIcon == evt.target;
 
 	let article = {
 		id : thread.id,
