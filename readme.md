@@ -1,4 +1,4 @@
-# FrontEnd를 관리하는 레포지토리 입니다.
+# 이 프로젝트의 FrontEnd를 관리합니다.
 
 # Hierarchy
 
@@ -30,12 +30,13 @@
 # Modules
 
 - `express` : 매우 좋은 모듈.
-- `mz` : `fs`를 포함한 node.js의 여러 기본 기능들이 더욱 사용하기 편해지도록 확장해주는 모듈.
+- `mz` : `fs`를 포함한 node.js의 여러 기본 기능들을 더욱 유용하게 확장시켜주는 모듈.
 - `supervisor` : 서버 파일에 변경사항이 있을 시, 자동으로 서버를 재부팅 시켜주는 모듈.
 - `uglify-js` : 자바스크립트 압축 모듈 [자세히](https://github.com/mishoo/UglifyJS2)
 - ~~babel : 아직 ECMAScript6 를 지원하지 않는 환경에서 ECMAScript6 Syntax를 사용 할 수 있게 해주는 모듈.~~
 
 # Description
+[자세히](https://github.com/Writing-Service/Design-Documents)
 
 1. 서비스는 간단하게 다음과 같다.
     - 제시문이 작성되고 임의 사용자에게 전달된다.
