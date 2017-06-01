@@ -1,3 +1,34 @@
+# FrontEnd를 관리하는 레포지토리 입니다.
+
+# Hierarchy
+
+- app : `express`의 정적 위치
+    - stat : 자주 사용될 파일들의 정적 위치
+        * card.css
+        * layout.css
+        * writing.js :
+            + `dueCheck` : 마감시간 카운터
+            + `editorManager` : 에디터 글자수 경고, 수정 메뉴(예정) 기능
+        * library.js :
+            + `threadContentHandler` : 글묶음 카드 본문 로드와 애니메이션
+            + `threadLoadHandler` : 글묶음 카드 불러오기
+        * text.js
+            + 디버그용 모바일뷰/데스크탑뷰 전환 기능 (타이틀 클릭/엔터키 입력시 작동)
+    - writing
+        * index.html : '글쓰기'에 해당하는 페이지
+    - library
+        * index.html : '라이브러리'에 해당하는 페이지
+    - newsfeed
+        * index.html : '뉴스피드'에 해당하는 페이지
+
+    * header.partial.html : 반복 사용되는 header 영역을 분리 시켜 놓은 html 파일
+    * footer.partial.html : 반복 사용되는 footer 영역을 분리 시켜 놓은 html 파일
+    * index.html : '홈'에 해당하는 페이지
+- node_modules : Node.js 모듈
+* index.js : Node.js 서버 실행시 시작 포인트
+
+# Description
+
 1. 서비스는 간단하게 다음과 같다.
     - 제시문이 작성되고 임의 사용자에게 전달된다.
     - 사용자는 제시문을 읽고 글을 쓴다. 글이 완성되면 제출한다.
