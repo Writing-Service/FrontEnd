@@ -1,24 +1,16 @@
 "use strict";
 
-class threadHandler {
+class threadContentHandler {
     constructor() {
-        this.article = {
-            id : undefined, //string
-            index : undefined,
-            author : undefined, //node
-            date : undefined,
-            content : undefined
-        },
-        this.data = [
-            { id : undefined }
-        ],
+        this.article,
+        this.data = [ { id : undefined } ],
         this.loadNext = true;
 
         this.addEventListeners = this.addEventListeners.bind(this);
         this.onArrowClickEl = this.onArrowClickEl.bind(this);
         this.onStarClickEl = this.onStarClickEl.bind(this);
         this.loadContent = this.loadContent.bind(this);
-        this.fillContent = this.fillContent.bind(this);
+        this.swapAnimation = this.swapAnimation.bind(this);
 
         this.addEventListeners();
     }
@@ -51,15 +43,17 @@ class threadHandler {
             thread = thread.parentNode;
         }
 
-        this.article.id = thread.id;
-        this.article.index = thread.getAttribute('index');
-        this.article.author = document.querySelector(`#${thread.id} .js--t-author`);
-		this.article.date = document.querySelector(`#${thread.id} .js--t-date`);
-		this.article.content = document.querySelector(`#${thread.id} .js--t-content`);
+        this.article = {
+            id : thread.id,
+            index : thread.getAttribute('index'),
+            author : document.querySelector(`#${thread.id} .js--t-author`),
+            date : document.querySelector(`#${thread.id} .js--t-date`),
+            content : document.querySelector(`#${thread.id} .js--t-content`)
+        }
 
         this.loadNext = evt.target == document.querySelector(`#${thread.id} .js--t-next`);
         
-        this.fillContent();
+        this.swapAnimation();
     }
 
     onStarClickEl(evt) {
@@ -69,13 +63,15 @@ class threadHandler {
             thread = thread.parentNode;
         }
 
-        this.article.id = thread.id;
-        this.article.index = evt.target.getAttribute('toindex');
-        this.article.author = document.querySelector(`#${thread.id} .js--t-author`);
-		this.article.date = document.querySelector(`#${thread.id} .js--t-date`);
-		this.article.content = document.querySelector(`#${thread.id} .js--t-content`);
+        this.article = {
+            id : thread.id,
+            index : evt.target.getAttribute('toindex'),
+            author : document.querySelector(`#${thread.id} .js--t-author`),
+            date : document.querySelector(`#${thread.id} .js--t-date`),
+            content : document.querySelector(`#${thread.id} .js--t-content`)
+        }
         
-        this.fillContent(true);
+        this.swapAnimation(true);
     }
 
     loadContent(id) {
@@ -128,13 +124,13 @@ class threadHandler {
         return this.data;
     }
 
-    fillContent(starClicked) {
+    swapAnimation(starClicked) {
         starClicked = starClicked || false;
 
         let nextBtn = document.querySelector(`#${this.article.id} .js--t-next`),
             prevBtn = document.querySelector(`#${this.article.id} .js--t-previous`);
 
-        // Handler for showing/hiding [.swipe-button]
+        // Handler for enable/disable [.swipe-button]
         if (starClicked) {
             prevBtn.classList.remove('inactive');
             nextBtn.classList.remove('inactive');
@@ -202,4 +198,30 @@ class threadHandler {
     }
 }
 
-new threadHandler();
+
+
+class threadLoadHandler {
+	constructor() {
+		this.createNewCard = this.createNewCard.bind(this);
+	}
+
+	createNewCard() {
+		let res = document.createElement('div'),
+            header = document.createElement('div'),
+            subTextHelper = document.createElement('div'),
+            subText = document.createElement('div'),
+            action = document.createElement('div'),
+
+
+		res.className = 'card library';
+		// 서버에서 로드해올 데이터
+		res.id = '';
+        res.setAttribute('index', '1');
+
+
+	}
+}
+
+
+new threadContentHandler();
+new threadLoadHandler();
