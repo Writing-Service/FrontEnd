@@ -34,6 +34,7 @@ class editorManager {
 
 new editorManager();
 
+
 class dueCheck {
 	constructor() {
 		this.targetNodes = [];

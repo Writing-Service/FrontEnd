@@ -154,6 +154,9 @@
     position: absolute;
     right: 16px;
     bottom: 16px;
+
+    display: flex;
+    align-items: center;
 }
 
 .swipe-pannel {
