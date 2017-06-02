@@ -218,11 +218,7 @@ position: relative;
     font-size: 12px;
 
     transition: color .2s ease,
-        font-weight .2s ease;
-}
-.editor .types--warning {
-    color: rgb(211, 47, 47);
-    font-weight: bold;
+                font-weight .2s ease;
 }
 
 .editor-action {

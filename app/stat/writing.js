@@ -14,7 +14,7 @@ class editorManager {
 	}
 
 	addEventListeners() {
-		this.editor.addEventListener('keyup', this.countLetters)
+		this.editor.addEventListener('keyup', this.countLetters);
 	}
 
 	countLetters(evt) {
@@ -23,10 +23,12 @@ class editorManager {
 		this.types.innerHTML = `${letters}/${this.maxTypes}`;
 
 		if (!this.isOverTyped && letters > this.maxTypes) {
-			this.types.classList.add('types--warning');
+			this.types.style.color = 'rgb(211, 47, 47)';
+			this.types.style.fontWeight = 'bold';
 			this.isOverTyped = true;
 		} else if (this.isOverTyped && letters <= this.maxTypes) {
-			this.types.classList.remove('types--warning');
+			this.types.style.color = '';
+			this.types.style.fontWeight = '';
 			this.isOverTyped = false;
 		}
 	}
