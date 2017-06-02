@@ -12,7 +12,7 @@
         * library.js :
             + `threadContentHandler` : 글묶음 카드 본문 로드와 애니메이션
             + `threadLoadHandler` : 글묶음 카드 불러오기
-        * text.js
+        * test.js
             + 디버그용 모바일뷰/데스크탑뷰 전환 기능 (타이틀 클릭/엔터키 입력시 작동)
     - writing
         * index.html : '글쓰기'에 해당하는 페이지
