@@ -133,6 +133,8 @@ main {
 	background-color: rgb(255, 255, 255);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
 	border-radius: 3px;
+
+	overflow: hidden;
 }
 
 .nocard > * {

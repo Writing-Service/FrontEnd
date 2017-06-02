@@ -16,9 +16,9 @@ class threadContentHandler {
     }
 
     addEventListeners() {
-        let prevBtns = document.querySelectorAll('.js--t-previous'),
-            nextBtns = document.querySelectorAll('.js--t-next'),
-            starBtns = document.querySelectorAll('.js--t-star');
+        let prevBtns = document.querySelectorAll('.js--tc-previous'),
+            nextBtns = document.querySelectorAll('.js--tc-next'),
+            starBtns = document.querySelectorAll('.js--tc-star');
 
         // for debug
         if (prevBtns.length != nextBtns.length) {
@@ -46,12 +46,12 @@ class threadContentHandler {
         this.article = {
             id : thread.id,
             index : thread.getAttribute('index'),
-            author : document.querySelector(`#${thread.id} .js--t-author`),
-            date : document.querySelector(`#${thread.id} .js--t-date`),
-            content : document.querySelector(`#${thread.id} .js--t-content`)
+            author : document.querySelector(`#${thread.id} .js--tc-author`),
+            date : document.querySelector(`#${thread.id} .js--tc-date`),
+            content : document.querySelector(`#${thread.id} .js--tc-content`)
         }
 
-        this.loadNext = evt.target == document.querySelector(`#${thread.id} .js--t-next`);
+        this.loadNext = evt.target == document.querySelector(`#${thread.id} .js--tc-next`);
         
         this.swapAnimation();
     }
@@ -66,9 +66,9 @@ class threadContentHandler {
         this.article = {
             id : thread.id,
             index : evt.target.getAttribute('toindex'),
-            author : document.querySelector(`#${thread.id} .js--t-author`),
-            date : document.querySelector(`#${thread.id} .js--t-date`),
-            content : document.querySelector(`#${thread.id} .js--t-content`)
+            author : document.querySelector(`#${thread.id} .js--tc-author`),
+            date : document.querySelector(`#${thread.id} .js--tc-date`),
+            content : document.querySelector(`#${thread.id} .js--tc-content`)
         }
         
         this.swapAnimation(true);
@@ -127,8 +127,8 @@ class threadContentHandler {
     swapAnimation(starClicked) {
         starClicked = starClicked || false;
 
-        let nextBtn = document.querySelector(`#${this.article.id} .js--t-next`),
-            prevBtn = document.querySelector(`#${this.article.id} .js--t-previous`);
+        let nextBtn = document.querySelector(`#${this.article.id} .js--tc-next`),
+            prevBtn = document.querySelector(`#${this.article.id} .js--tc-previous`);
 
         // Handler for enable/disable [.swipe-button]
         if (starClicked) {
@@ -164,19 +164,17 @@ class threadContentHandler {
 
 
         // Prepare Animating
-        let animationHelper = document.querySelector(`#${this.article.id} .js--t-content-helper`),
-            starIndex = document.querySelector(`#${this.article.id} .js--t-star-index`);
+        let animationHelper = document.querySelector(`#${this.article.id} .js--tc-content-helper`),
+            starIndex = document.querySelector(`#${this.article.id} .js--tc-star-index`);
 
         animationHelper.innerHTML = this.loadContent(this.article.id)[this.article.index].content;
             // 여기서 this.loadContent 함수로 데이터를 갱신했으니 this.data 사용이 가능할 것.
 
         let animationStartHeight = `${this.article.content.getBoundingClientRect().height}px`,
-		    animationEndHeight =
-                // +32 는 모바일버젼에서 높이계산이 정확히 안되어 오버플로우 되길래 임시방편으로 땜빵해놓은 것. 고쳐야 할 문제임!!!
-                `${animationHelper.getBoundingClientRect().height + 32}px`;
+		    animationEndHeight = `${animationHelper.getBoundingClientRect().height}px`;
 
         this.article.content.style.height = animationStartHeight;
-        this.article.content.classList.add('content--swapping');
+        this.article.content.style.opacity = 0;
 
         // Animation Starts
         starIndex.style.transform = `translateX(${this.article.index - 1}00%)`;
@@ -192,12 +190,13 @@ class threadContentHandler {
             
         // Animation Ends
         setTimeout(function() {
-            that.article.content.classList.remove('content--swapping');
-        }, 600);
+            that.article.content.style.opacity = 1;
+        }, 400);
 
     }
 }
 
+new threadContentHandler();
 
 
 class threadLoadHandler {
@@ -206,22 +205,20 @@ class threadLoadHandler {
 	}
 
 	createNewCard() {
-		let res = document.createElement('div'),
+		let card = document.createElement('div'),
             header = document.createElement('div'),
             subTextHelper = document.createElement('div'),
             subText = document.createElement('div'),
-            action = document.createElement('div'),
+            action = document.createElement('div');
 
 
-		res.className = 'card library';
+		card.className = 'card library';
 		// 서버에서 로드해올 데이터
-		res.id = '';
-        res.setAttribute('index', '1');
+		card.id = '';
+        card.setAttribute('index', '1');
 
-
+        
 	}
 }
 
-
-new threadContentHandler();
 new threadLoadHandler();
