@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>[title]</title>
+	<link rel="stylesheet" href="stat/layout.css">
+	<link rel="stylesheet" href="stat/card.css">
+</head>
+
+<body class="desktop">
+
+<header>
+    <div class="header-layout container">
+        <!-- 뒤로가기 버튼 삭제의견.
+
+        <a class="mobile-only backward">
+            <i class="material-icons">arrow_back</i>
+        </a>
+        
+         -->
+        <h1 class="header__title">[title]</h1>
+        
+        <nav class="header__tabs">
+            <a class="tabs__item" href="writing/index.html">
+                <i class="mobile-only material-icons">create</i>
+                <span class="desktop-only">글쓰기</span>
+            </a>
+            <a class="tabs__item" href="library/index.html">
+                <i class="mobile-only material-icons">library_books</i>
+                <span class="desktop-only">라이브러리</span>
+            </a>
+            <a class="tabs__item" href="newsfeed/index.html">
+                <i class="mobile-only material-icons">explore</i>
+                <span class="desktop-only">뉴스피드</span>
+            </a>
+        </nav>
+        
+        <a class="header__pseudonym">
+            <span>필명</span>
+            <i class="material-icons">arrow_drop_down</i>
+        </a>
+    </div>
+</header>
+
+<main>
+
+	<div class="container">
+
+		<div class="bottom-margin"></div>
+	</div>
+
+</main>
+
+<!-- 화면 클릭시 모바일/데스크탑 버전 전환 기능. -->
+<script src="stat/test.js"></script>
+
+</body>
+</html>

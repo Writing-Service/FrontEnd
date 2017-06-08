@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<title>[title]</title>
+	<link rel="stylesheet" href="../stat/layout.css">
+	<link rel="stylesheet" href="../stat/card.css">
+</head>
+
+<body class="desktop">
+
+<header>
+    <div class="header-layout container">
+        <!-- 뒤로가기 버튼 삭제의견.
+
+        <a class="mobile-only backward">
+            <i class="material-icons">arrow_back</i>
+        </a>
+        
+         -->
+        <h1 class="header__title">[title]</h1>
+        
+        <nav class="header__tabs">
+            <a class="tabs__item" href="../writing/index.html">
+                <i class="mobile-only material-icons">create</i>
+                <span class="desktop-only">글쓰기</span>
+            </a>
+            <a class="tabs__item" href="../library/index.html">
+                <i class="mobile-only material-icons">library_books</i>
+                <span class="desktop-only">라이브러리</span>
+            </a>
+            <a class="tabs__item" href="../newsfeed/index.html">
+                <i class="mobile-only material-icons">explore</i>
+                <span class="desktop-only">뉴스피드</span>
+            </a>
+        </nav>
+        
+        <a class="header__pseudonym">
+            <span>필명</span>
+            <i class="material-icons">arrow_drop_down</i>
+        </a>
+    </div>
+</header>
+
+<main>
+
+<div class="container">
+    	
+	<div class="space-between"></div>
+	
+	<div class="nocard rtl">
+		<a class="inactive button">0/3</a>
+		<a class="button">글 받아오기</a>
+	</div>
+
+    <!-- 받아온 글 반복 영역 시작 -->
+    
+	<div class="space-between"></div>
+
+	<div id="[Article ID]" class="card presentation">
+		<div class="primary-header">
+			<h2 class="primary-text">Author</h2>
+			<span class="sub-title">Yesterday 5:09 PM</span>
+			<span class="timer-chip">
+				<i class="chip__icon">
+					<i class="material-icons">schedule</i>
+				</i>
+                 <!-- 아이디 규칙 [js--dc-#], dueto 규칙 [DD:HH:MM:SS] -->
+				<span id="js--dc-1" class="chip__timer" dueto="9:07:33:00">checking...</span>
+			</span>
+		</div>
+		
+		<div class="sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div>
+
+	<div class="space-between"></div>
+
+	<div id="[Article ID2]" class="card presentation">
+		<div class="primary-header">
+			<h2 class="primary-text">Author</h2>
+			<span class="sub-title">3일전</span>
+			<span class="timer-chip">
+				<i class="chip__icon">
+					<i class="material-icons">schedule</i>
+				</i>
+                 <!-- 아이디 규칙 [js--dc-#], dueto 규칙 [DD:HH:MM:SS] -->
+				<span id="js--dc-2" class="chip__timer" dueto="8:21:00:00">checking...</span>
+			</span>
+		</div>
+		
+		<div class="sub-text">베이베 !~~m ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div>
+
+    <!-- 받아온 글 반복 영역 끝 -->
+
+
+    <!-- 에디터 영역 시작 -->
+	
+	<div class="space-between"></div>
+	
+	<div class="card">
+		<div class="editor">
+			<textarea class="js--em-editor"></textarea>
+			<span class="js--em-types types ">0/700</span>
+		</div>
+	</div>
+    
+	<div class="space-between"></div>
+	
+	<div class="nocard">
+		<div class="card editor-action">
+			<a class="item">임시저장</a>
+			<i class="divider"></i>
+			<a class="item">작성완료</a>
+			<i class="divider"></i>
+			<a class="item">제출</a>
+		</div>
+	</div>
+
+    <!-- 에디터 영역 끝 -->
+	
+	<div class="bottom-margin"></div>
+</div>
+
+
+</main>
+
+<!-- 화면 클릭시 모바일/데스크탑 버전 전환 기능. -->
+<script src="../stat/test.js"></script>
+
+<script>
+'use strict';
+
+class editorManager {
+	constructor() {
+		this.types = document.querySelector('.js--em-types'),
+		this.maxTypes = 700;
+		this.editor = document.querySelector('.js--em-editor'),
+		this.isOverTyped = false;
+
+		this.addEventListeners = this.addEventListeners.bind(this);
+		this.countLetters = this.countLetters.bind(this);
+
+		this.addEventListeners();
+	}
+
+	addEventListeners() {
+		this.editor.addEventListener('keyup', this.countLetters);
+	}
+
+	countLetters(evt) {
+		let letters = evt.target.value.length;
+
+		this.types.innerHTML = `${letters}/${this.maxTypes}`;
+
+		if (!this.isOverTyped && letters > this.maxTypes) {
+			this.types.style.color = 'rgb(211, 47, 47)';
+			this.types.style.fontWeight = 'bold';
+			this.isOverTyped = true;
+		} else if (this.isOverTyped && letters <= this.maxTypes) {
+			this.types.style.color = '';
+			this.types.style.fontWeight = '';
+			this.isOverTyped = false;
+		}
+	}
+}
+
+new editorManager();
+
+
+class dueCheck {
+	constructor() {
+		this.targetNodes = [];
+		this.lastTarget = 1;
+		this.updateCycle = 1000;
+
+		this.renderTargets = this.renderTargets.bind(this);
+		this.update = this.update.bind(this);
+
+		let that = this;
+		window.setInterval(that.update, that.updateCycle);
+
+		this.renderTargets();
+	}
+
+	// 새로 글 받아오면 renderTargets함수를 실행시켜줄 것.
+	renderTargets() {
+		let t,
+			i = 1;
+
+		while (true) {
+			t = document.getElementById(`js--dc-${i}`);
+
+			if (t == undefined)
+				break;
+
+			this.targetNodes.push(t);
+			i++;
+		}
+	}
+
+	update() {
+		this.date = new Date();
+		this.targetNodes.map( t => {
+			let dueto = t.getAttribute('dueto').split(':'),
+				remain = {
+					d :  dueto[0] - this.date.getDate(),
+					h : dueto[1] - this.date.getHours(),
+					m : dueto[2] - this.date.getMinutes(),
+					s : dueto[3] - this.date.getSeconds()
+				},
+				res = '';
+
+			if (remain.s < 0) {
+				remain.s += 60;
+				remain.m--;
+			}
+
+			if (remain.m < 0) {
+				remain.m += 60;
+				remain.h--;
+			}
+
+			if (remain.h < 0) {
+				remain.h += 24;
+				remain.d--;
+			}
+
+			if (remain.d < 0) {
+				// 두 달에 걸쳐 있는 경우 만들어야함
+
+				res = 'DUE END';
+			} else if (remain.d == 0 && remain.h == 0) {
+				// 마감이 한 시간 채 안남은 경우 부터는 분과 초만 표시함
+				if (remain.m != 0)
+					res += `${remain.m}M`;
+
+				if (remain.s != 0)
+					res += ` ${remain.s}S`;
+
+			} else {
+				if (remain.d != 0)
+					res += `${remain.d}D`;
+
+				if (remain.h != 0)
+					res += ` ${remain.h}H`;
+
+				if (remain.m != 0)
+					res += ` ${remain.m}M`;
+
+			}
+
+			if (t.innerHTML != res)
+				t.innerHTML = res;
+		});
+	}
+}
+
+new dueCheck();
+</script>
+
+</body>
+</html>
