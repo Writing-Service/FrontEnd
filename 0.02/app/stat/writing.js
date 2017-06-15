@@ -1,10 +1,37 @@
 'use strict';
 
+class motiveHandler {
+	constructor() {
+		// 제시문 작성을 위해 작성해야 할 글감 수
+		this.required = 3;
+
+		this.createPrimaryBtn = document.getElementById('js--mh-create-primary');
+		this.requestMotiveBtn = document.getElementById('js--mh-create-motive');
+
+		this.updateCreatePrimaryBtn = this.updateCreatePrimaryBtn.bind(this)
+
+		this.updateCreatePrimaryBtn();
+	}
+
+	updateCreatePrimaryBtn() {
+		let written_motives = this.createPrimaryBtn.getAttribute('written');
+
+		if (written_motives < this.required) {
+			this.createPrimaryBtn.classList.add('inactive');
+			this.createPrimaryBtn.innerHTML = `${written_motives}/${this.required}`;
+		} else {
+			this.createPrimaryBtn.classList.remove('inactive');
+			this.createPrimaryBtn.innerHTML = '제시문 작성하기';
+		}
+	}
+}
+new motiveHandler();
+
 class editorManager {
 	constructor() {
-		this.types = document.querySelector('.js--em-types'),
+		this.types = document.getElementById('js--em-types'),
 		this.maxTypes = 700;
-		this.editor = document.querySelector('.js--em-editor'),
+		this.editor = document.getElementById('js--em-editor'),
 		this.isOverTyped = false;
 
 		this.addEventListeners = this.addEventListeners.bind(this);
@@ -33,7 +60,6 @@ class editorManager {
 		}
 	}
 }
-
 new editorManager();
 
 
@@ -54,23 +80,14 @@ class dueCheck {
 
 	// 새로 글 받아오면 renderTargets함수를 실행시켜줄 것.
 	renderTargets() {
-		let t,
-			i = 1;
-
-		while (true) {
-			t = document.getElementById(`js--dc-${i}`);
-
-			if (t == undefined)
-				break;
-
-			this.targetNodes.push(t);
-			i++;
-		}
+		this.targetNodes = document.querySelectorAll('.js--dc-timer');
 	}
 
 	update() {
 		this.date = new Date();
-		this.targetNodes.map( t => {
+		for (let i = 0; i < this.targetNodes.length; i++) {
+			let t = this.targetNodes[i];
+
 			let dueto = t.getAttribute('dueto').split(':'),
 				remain = {
 					d :  dueto[0] - this.date.getDate(),
@@ -121,8 +138,7 @@ class dueCheck {
 
 			if (t.innerHTML != res)
 				t.innerHTML = res;
-		});
+		}
 	}
 }
-
 new dueCheck();
