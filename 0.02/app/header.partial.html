@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="mobile-web-app-capable" content="yes">
-	<title>[title]</title>
+	<title>{{page_title}}</title>
 	<link rel="stylesheet" href="/stat/layout.css">
 	<link rel="stylesheet" href="/stat/card.css">
 </head>
@@ -14,14 +14,7 @@
 
 <header>
     <div class="header-layout container">
-        <!-- 뒤로가기 버튼 삭제의견.
-
-        <a class="mobile-only backward">
-            <i class="material-icons">arrow_back</i>
-        </a>
-        
-         -->
-        <h1 class="header__title">[title]</h1>
+        <h1 class="header__title">{{header_title}}</h1>
         
         <nav class="header__tabs">
             <a class="tabs__item" href="/writing/">
@@ -39,7 +32,7 @@
         </nav>
         
         <a class="header__pseudonym">
-            <span>필명</span>
+            <span>{{user.id}}</span>
             <i class="material-icons">arrow_drop_down</i>
         </a>
     </div>

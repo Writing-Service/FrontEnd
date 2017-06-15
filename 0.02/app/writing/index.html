@@ -3,31 +3,32 @@
 	<div class="space-between"></div>
 	
 	<div class="nocard rtl">
-		<a class="inactive button">0/3</a>
-		<a class="button">글 받아오기</a>
+		<a id="js--mh-create-primary" class="inactive button" written="{{user.written_motives}}">checking...</a>
+		<a id="js--mh-request-motive" class="button">글 받아오기</a>
 	</div>
 
-    <!-- 받아온 글 반복 영역 시작 -->
+    {{#articles}}
     
 	<div class="space-between"></div>
 
-	<div id="[Article ID]" class="card presentation">
+	<div id="{{article.id}}" class="js--em-card card presentation">
 		<div class="primary-header">
-			<h2 class="primary-text">Author</h2>
-			<span class="sub-title">Yesterday 5:09 PM</span>
+			<h2 class="primary-text">{{author}}</h2>
+			<span class="sub-title">{{date}}</span>
 			<span class="timer-chip">
 				<i class="chip__icon">
 					<i class="material-icons">schedule</i>
 				</i>
-                 <!-- 아이디 규칙 [js--dc-#], dueto 규칙 [DD:HH:MM:SS] -->
-				<span id="js--dc-1" class="chip__timer" dueto="3:07:33:00">checking...</span>
+				<span class="js--dc-timer chip__timer" dueto="{{dueto}}">calculating...</span>
 			</span>
 		</div>
 		
-		<div class="sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+		<div class="sub-text">{{desc}}</div>
+
+		<input type="hidden" name="tempsave" value="{{tempsave}}">
 	</div>
 
-    <!-- 받아온 글 반복 영역 끝 -->
+    {{/articles}}
 
 
     <!-- 에디터 영역 시작 -->
@@ -36,8 +37,8 @@
 	
 	<div class="card">
 		<div class="editor">
-			<textarea class="js--em-editor"></textarea>
-			<span class="js--em-types types ">0/700</span>
+			<textarea id="js--em-editor"></textarea>
+			<span id="js--em-types" class="types">0/700</span>
 		</div>
 	</div>
     

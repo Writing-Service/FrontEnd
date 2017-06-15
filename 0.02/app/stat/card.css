@@ -243,11 +243,10 @@ position: relative;
 .editor-action {
 width: 360px;
 height: 40px;
+margin-left: auto;
 
 display: flex;
 align-items: center;
-
-float: right;
 }
 .mobile .editor-action {
 width: 100%;
