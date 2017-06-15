@@ -117,8 +117,9 @@ class dueCheck {
 
 				res = 'DUE END';
 				let tp = t.parentNode.parentNode.parentNode;
-				tp.style.transition = 'opacity 1s ease';
+				tp.style.transition = 'opacity 1s ease, background-color 1s ease';
 				tp.style.opacity = '.5';
+				tp.style.backgroundColor = 'rgb(228, 228, 228)';
 			} else if (remain.d == 0 && remain.h == 0) {
 				// 마감이 한 시간 채 안남은 경우 부터는 분과 초만 표시함
 				if (remain.m != 0)
