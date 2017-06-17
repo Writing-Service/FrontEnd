@@ -15,11 +15,11 @@
     </div>
 
     <div class="search-list">
-        <!-- 라이브러리 카드 반복 영역 시작 -->
+        {{#threads}}
 
         <div class="space-between"></div>
 
-        <div id="entryID" class="card library" index="1">
+        <div id="{{id}}" class="card library" index="1">
 
             <!-- 자신이 참여한 글 만족 표시
             <div class="give-star">
@@ -28,13 +28,13 @@
             -->
 
             <div class="primary-header">
-                <h2 class="js--tc-author primary-text">Author</h2>
-                <span class="js--tc-date sub-title">Yesterday 5:09 PM</span>
+                <h2 class="js--tc-author primary-text">{{articles.author}}</h2>
+                <span class="js--tc-date sub-title">{{articles.date}}</span>
             </div>
 
             <div class="js--tc-content-helper sub-text-helper"></div>
 
-            <div class="js--tc-content sub-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+            <div class="js--tc-content sub-text">{{articles.desc}}</div>
 
             <div class="action">
                 <div class="star-container">
@@ -52,7 +52,7 @@
 
                 <div class="vote">
                     <i class="material-icons">expand_less</i>
-                    <span>21369</span>
+                    <span>{{vote}}</span>
                     <i class="material-icons">expand_more</i>
                 </div>
             </div>
@@ -67,7 +67,7 @@
             </div>
         </div>
 
-        <!-- 라이브러리 카드 반복 영역 끝 -->
+        {{/threads}}
     </div>
 	
 	<div class="bottom-margin"></div>
