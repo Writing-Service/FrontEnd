@@ -57,8 +57,7 @@ body {
 }
 
 .hidden {
-    width: 0;
-    height: 0;
+	position: fixed;
     opacity: 0;
 	pointer-events: none;
 }
@@ -187,6 +186,7 @@ header {
 
 		.header__title {
 			flex-grow: 1;
+			flex-shrink: 0;
 			font-size: 18px;
 		}
 
@@ -225,7 +225,66 @@ header {
 				text-align: center;
 			}
 
-		.header__pseudonym {
-			display: flex;
-			align-items: center;
+		.header__user {
+			flex-grow: 0;
+			flex-shrink: 0;
+		}
+
+			.user__toggle-label {
+				height: 100%;
+
+				display: flex;
+				align-items: center;
+
+				cursor: pointer;
+			}
+			
+			.user__toggle-label:hover {
+				color: rgb(0, 150, 136);
+			}
+
+		
+
+		.user__toggle-underlay {
+			width: 100%;
+			height: 100%;
+
+			position: fixed;
+			top: 0;
+			left: 0;
+			z-index: 2;
+
+			opacity: 0;
+			background-color: rgb(0, 0, 0);
+
+			transition: opacity .2s ease;
+
+			pointer-events: none;
+		}
+		.user__toggle:checked ~ .user__toggle-underlay {
+			opacity: .2;
+			pointer-events: all;
+		}
+
+		.user__menu {
+			width: 240px;
+			height: 320px;
+			max-height: 0;
+
+			position: fixed;
+			top: 48px;
+			right: 0;
+			z-index: 2;
+
+			overflow: hidden;
+
+			background-color: rgb(255, 255, 255);
+			box-shadow: 0 2px 6px rgba(0, 0, 0, .35);
+			border-radius: 2px;
+
+			transition: max-height .2s ease;
+		}
+
+		.user__toggle:checked ~ .user__menu {
+			max-height: 320px;
 		}
