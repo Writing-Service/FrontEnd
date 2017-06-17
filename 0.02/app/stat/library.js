@@ -190,6 +190,7 @@ class threadContentHandler {
             
         // Animation Ends
         setTimeout(function() {
+            that.article.content.style.height = 'auto';
             that.article.content.style.opacity = 1;
         }, 400);
 
