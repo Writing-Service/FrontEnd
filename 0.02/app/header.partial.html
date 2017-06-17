@@ -10,7 +10,15 @@
 	<link rel="stylesheet" href="/stat/card.css">
 </head>
 
-<body class="desktop">
+<body>
+
+<script>
+    if (window.innerWidth > 480) {
+        document.body.classList.add('desktop');
+    } else {
+        document.body.classList.add('mobile');
+    }
+</script>
 
 <header>
     <div class="header-layout container">
@@ -31,9 +39,19 @@
             </a>
         </nav>
         
-        <a class="header__pseudonym">
-            <span>{{user.id}}</span>
-            <i class="material-icons">arrow_drop_down</i>
+        <a class="header__user">
+            <input id="user__toggle" type="checkbox" class="user__toggle hidden">
+
+            <label class="user__toggle-label" for="user__toggle">
+                <span class="user__name">{{user.id}}</span>
+                <i class="material-icons">arrow_drop_down</i>
+            </label>
+
+            <label class="user__toggle-underlay" for="user__toggle"></label>
+
+            <div class="user__menu">
+                {{user.id}}의 메뉴!
+            </div>
         </a>
     </div>
 </header>
