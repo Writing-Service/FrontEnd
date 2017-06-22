@@ -1,14 +1,9 @@
 #!/usr/bin/env node
 
 /**
- * 
- * Writing-Service BackEnd Server
+ * Writing-Service Front-End Server
  * ver: 0.02
- * Author: Hepheir
- * 
- * Start: Jun 15th, 2017
- * End:
- * 
+ * Hepheir@gmail.com
  */
 
 'use strict';
