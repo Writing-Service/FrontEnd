@@ -66,11 +66,12 @@ new editorManager();
 class dueCheck {
 	constructor() {
 		this.targetNodes = [];
-		this.lastTarget = 1;
 		this.updateCycle = 1000;
+		this.maxHoldDate = 3;
 
 		this.renderTargets = this.renderTargets.bind(this);
 		this.update = this.update.bind(this);
+		this.removeCard = this.removeCard.bind(this);
 
 		let that = this;
 		window.setInterval(that.update, that.updateCycle);
@@ -84,65 +85,79 @@ class dueCheck {
 	}
 
 	update() {
-		this.date = new Date();
-		for (let i = 0; i < this.targetNodes.length; i++) {
-			let t = this.targetNodes[i];
+		let date = new Date();
 
-			let dueto = t.getAttribute('dueto').split(':'),
-				remain = {
-					d :  dueto[0] - this.date.getDate(),
-					h : dueto[1] - this.date.getHours(),
-					m : dueto[2] - this.date.getMinutes(),
-					s : dueto[3] - this.date.getSeconds()
-				},
-				res = '';
+		[].map.call(this.targetNodes, t => {
+			let dueto = t.getAttribute('dueto').split(':');
 
-			if (remain.s < 0) {
-				remain.s += 60;
-				remain.m--;
+			let r = {
+				days : parseInt(dueto[0]) - date.getDate(),
+				hrs  : parseInt(dueto[1]) - date.getHours(),
+				mins : parseInt(dueto[2]) - date.getMinutes(),
+				secs : parseInt(dueto[3]) - date.getSeconds()
+			};
+
+			if (r.secs < 0) {
+				r.secs += 60;
+				r.mins--;
+			} if (r.mins < 0) {
+				r.mins += 60;
+				r.hrs--;
+			} if (r.hrs < 0) {
+				r.hrs += 24;
+				r.days--;
+			} if (r.days < 0) {
+				let endOfTheMonth = [
+						31, 28, 31, 30, 31, 30,
+						31, 31, 30, 31, 30, 31
+					][date.getMonth()];
+
+				r.days = dueto[0] + endOfTheMonth - date.getDate();
+				
+				if (r.days < 0 || r.days > this.maxHoldDate) {
+					t.innerHTML = 'DUE END';
+					this.removeCard(t);
+					return;
+				}
 			}
 
-			if (remain.m < 0) {
-				remain.m += 60;
-				remain.h--;
-			}
+			let res = '';
 
-			if (remain.h < 0) {
-				remain.h += 24;
-				remain.d--;
-			}
-
-			if (remain.d < 0) {
-				// 두 달에 걸쳐 있는 경우 만들어야함
-
-				res = 'DUE END';
-				let tp = t.parentNode.parentNode.parentNode;
-				tp.style.transition = 'opacity 1s ease, background-color 1s ease';
-				tp.style.opacity = '.5';
-				tp.style.backgroundColor = 'rgb(228, 228, 228)';
-			} else if (remain.d == 0 && remain.h == 0) {
-				// 마감이 한 시간 채 안남은 경우 부터는 분과 초만 표시함
-				if (remain.m != 0)
-					res += `${remain.m}M`;
-
-				if (remain.s != 0)
-					res += ` ${remain.s}S`;
-
+			if (r.days == 0) {
+				if (r.hrs != 0)
+					res += ` ${r.hrs}H`;
+				if (r.mins != 0)
+					res += ` ${r.mins}M`;
+				if (r.secs != 0)
+					res += ` ${r.secs}S`;
 			} else {
-				if (remain.d != 0)
-					res += `${remain.d}D`;
-
-				if (remain.h != 0)
-					res += ` ${remain.h}H`;
-
-				if (remain.m != 0)
-					res += ` ${remain.m}M`;
-
+				res += ` ${r.days}D`;
+				if (r.hrs != 0)
+					res += ` ${r.hrs}H`;
+				if (r.mins != 0)
+					res += ` ${r.mins}M`;
 			}
-
+			
 			if (t.innerHTML != res)
 				t.innerHTML = res;
-		}
+		});
+	}
+
+	removeCard(t) {
+		let target = document.getElementById(t.getAttribute('cardid'));
+
+		target.style.maxHeight = `${target.getBoundingClientRect().height}px`;
+		target.style.transition = 'transform .5s ease-in, opacity .5s linear, margin .35s ease, max-height .35s ease';
+
+		setTimeout(() => {
+			target.style.opacity = '0';
+			target.style.transform = 'translateX(100%)';
+		}, 1000);
+
+		setTimeout(() => {
+			target.style.maxHeight = '0';
+			target.style.margin = '0';
+		}, 1500);
 	}
 }
 new dueCheck();
