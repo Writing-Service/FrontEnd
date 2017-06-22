@@ -1,17 +1,14 @@
 <div class="container">
-    	
-	<div class="space-between"></div>
 	
 	<div class="nocard rtl">
 		<a id="js--mh-create-primary" class="inactive button" written="{{user.written_motives}}">checking...</a>
 		<a id="js--mh-request-motive" class="button">글 받아오기</a>
 	</div>
+	
 
     {{#articles}}
-    
-	<div class="space-between"></div>
 
-	<div id="{{id}}" class="js--em-card card presentation">
+	<div id="{{id}}" class="card presentation">
 		<div class="primary-header">
 			<h2 class="primary-text">{{author}}</h2>
 			<span class="sub-title">{{date}}</span>
@@ -19,7 +16,7 @@
 				<i class="chip__icon">
 					<i class="material-icons">schedule</i>
 				</i>
-				<span class="js--dc-timer chip__timer" dueto="{{dueto}}">calculating...</span>
+				<span class="js--dc-timer chip__timer" cardid="{{id}}" dueto="{{dueto}}">calculating...</span>
 			</span>
 		</div>
 		
@@ -33,16 +30,12 @@
 
     <!-- 에디터 영역 시작 -->
 	
-	<div class="space-between"></div>
-	
 	<div class="card">
 		<div class="editor">
 			<textarea id="js--em-editor"></textarea>
 			<span id="js--em-types" class="types">0/700</span>
 		</div>
 	</div>
-    
-	<div class="space-between"></div>
 	
 	<div class="nocard">
 		<div class="card editor-action">
@@ -55,8 +48,6 @@
 	</div>
 
     <!-- 에디터 영역 끝 -->
-	
-	<div class="bottom-margin"></div>
 </div>
 
 <script src="/stat/writing.js"></script>
