@@ -8,7 +8,7 @@
 
     {{#articles}}
 
-	<div id="{{id}}" class="card presentation">
+	<div id="{{id}}" dueto="{{dueto}}" class="js--dc-card card presentation">
 		<div class="primary-header">
 			<h2 class="primary-text">{{author}}</h2>
 			<span class="sub-title">{{date}}</span>
@@ -16,13 +16,13 @@
 				<i class="chip__icon">
 					<i class="material-icons">schedule</i>
 				</i>
-				<span class="js--dc-timer chip__timer" cardid="{{id}}" dueto="{{dueto}}">calculating...</span>
+				<span class="js--dc-timer chip__timer">calculating...</span>
 			</span>
 		</div>
 		
 		<div class="sub-text">{{desc}}</div>
 		
-		<input type="hidden" name="tempsave" value="{{tempsave}}">
+		<input class="js--em-temp-save" type="hidden" name="tempsave" value="{{tempsave}}">
 	</div>
 
     {{/articles}}

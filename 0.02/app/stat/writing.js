@@ -81,14 +81,16 @@ class dueCheck {
 
 	// 새로 글 받아오면 renderTargets함수를 실행시켜줄 것.
 	renderTargets() {
-		this.targetNodes = document.querySelectorAll('.js--dc-timer');
+		this.targetNodes = document.querySelectorAll('.js--dc-card');
 	}
 
 	update() {
 		let date = new Date();
 
 		[].map.call(this.targetNodes, t => {
-			let dueto = t.getAttribute('dueto').split(':');
+			let dueto = t.getAttribute('dueto').split(':'),
+				id = t.id,
+				timer = document.querySelector(`#${id} .js--dc-timer`);
 
 			let r = {
 				days : parseInt(dueto[0]) - date.getDate(),
@@ -115,8 +117,11 @@ class dueCheck {
 				r.days = dueto[0] + endOfTheMonth - date.getDate();
 				
 				if (r.days < 0 || r.days > this.maxHoldDate) {
-					t.innerHTML = 'DUE END';
-					this.removeCard(t);
+					timer.innerHTML = 'DUE END';
+						
+					t.addEventListener('click', () => {
+						this.removeCard(id);
+					});
 					return;
 				}
 			}
@@ -138,26 +143,24 @@ class dueCheck {
 					res += ` ${r.mins}M`;
 			}
 			
-			if (t.innerHTML != res)
-				t.innerHTML = res;
+			if (timer.innerHTML != res)
+				timer.innerHTML = res;
 		});
 	}
 
-	removeCard(t) {
-		let target = document.getElementById(t.getAttribute('cardid'));
+	removeCard(id) {
+		let target = document.getElementById(id);
 
 		target.style.maxHeight = `${target.getBoundingClientRect().height}px`;
 		target.style.transition = 'transform .5s ease-in, opacity .5s linear, margin .35s ease, max-height .35s ease';
 
-		setTimeout(() => {
-			target.style.opacity = '0';
-			target.style.transform = 'translateX(100%)';
-		}, 1000);
+		target.style.opacity = '0';
+		target.style.transform = 'translateX(100%)';
 
 		setTimeout(() => {
 			target.style.maxHeight = '0';
 			target.style.margin = '0';
-		}, 1500);
+		}, 500);
 	}
 }
 new dueCheck();

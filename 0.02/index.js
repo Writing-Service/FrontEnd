@@ -19,6 +19,7 @@ const app = express();
 
 // temporal data reader function for compiling handlebars
 function handlebarsData(req) {
+    req.item = req.item || 'Writing-Service';
     let data = {
             page_title: req.item,
             header_title: req.item.charAt(0).toUpperCase() + req.item.slice(1),
