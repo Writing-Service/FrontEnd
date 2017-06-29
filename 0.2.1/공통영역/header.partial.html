@@ -35,6 +35,73 @@
         color: rgba(0, 0, 0, .54);
     }
 
+    main {
+        height: 100%;
+        padding: 56px 16px 20vh 16px;
+
+        overflow-x: hidden;
+    }
+    .s main {
+        padding-top: 96px;
+    }
+
+    .card,
+    .nocard {
+        margin-top: 24px;
+    } .s .card,
+    .s .nocard {
+        margin-top: 20px;
+    }
+
+    .card {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+        border-radius: 3px;
+
+        overflow: hidden;
+    }
+
+    .nocard > * {
+        display: inline-block;
+    }
+    
+    .rtl {
+        text-align: right;
+    }
+
+    .button {
+        min-width: 72px;
+        height: 36px;
+        padding: 10px 16px;
+        margin-left: 8px;
+        
+        display: inline-block;
+        
+        border-radius: 2px;
+        background-color: rgb(0, 150, 136);
+        box-shadow: 0 2px 6px rgba(0, 0, 0, .3);
+        color: rgb(255, 255, 255);
+        
+        font-size: 14px;
+        line-height: 16px;
+        text-align: center;
+
+        cursor: pointer;
+    }
+    .s .button {
+        height: 32px;
+        padding: 9px 16px;
+        
+        font-size: 13px;
+        line-height: 14px;
+    }
+    .inactive {
+        opacity: .33;
+        pointer-events: none;
+    }
+
+    /* end predefined */
+
     .m .s-only {
         display: none;
     }
