@@ -12,9 +12,7 @@
             + `editorManager` : 에디터 글자수 경고
         * library.js :
             + `threadHandler` : 글묶음 카드 글 로드와 로드시 애니메이션 (터치 슬라이드, 방향키, 버튼 클릭 등)
-                - `loadContent` 함수에서 서버에서 로드 처리 (미완)
-                
-        
+                - `loadContent` 함수에서 서버에서 로드 처리 (미완)    
     - writing
         * index.html : '글쓰기'에 해당하는 페이지
             + 사용된 `handlebars` 치환자
@@ -25,9 +23,7 @@
                 + `datetime` : 작성일 writing.js의 `dueCheck`에서 사용할 수 있게 `javascript`의 `new Date() - YYYY-MM-DDTHH:MM:SS` 포멧 이용 바람. [자세히](https://www.w3schools.com/tags/att_time_datetime.asp)
                 + `date` : 표시할 작성일 문구 (ex. 어제, 일년 전, 방금 전...)
                 + `desc` : 글 본문
-                + `tempsave` : 유저의 에디터 임시 저장 기록
-
-
+                + `tempsave` : 유저의 에디터 임시 저장 기록    
     - library
         * index.html : '라이브러리'에 해당하는 페이지
             + 사용된 `handlebars` 치환자
@@ -42,20 +38,16 @@
                 + `vote`
                     + `vote.up` : 유저의 업 보트 참여 여부 (참일 경우 `checked`/ 아닐 경우 공백으로 처리)
                     + `vote.down` : 유저의 다운 보트 참여 여부 (업 보트와 동일 형식)
-                    + `vote.score` : 글의 vote 수.
-
-
+                    + `vote.score` : 글의 vote 수    
     - newsfeed
         * index.html : '뉴스피드'에 해당하는 페이지
-            + library와 사용된 `handlebars` 치환자가 동일함.
-
-
+            + library와 사용된 `handlebars` 치환자가 동일함.    
     * header.partial.html : 반복 사용되는 header 영역을 분리 시켜 놓은 html 파일
         + 사용된 `handlebars` 치환자
         + `page_title` : 브라우저 탭에 표시될 타이틀
         + `header_title` : 헤더영역 왼쪽에 표시될 타이틀
         + `user`
-            + `user.name` : 필명
+            + `user.name` : 필명    
     * footer.partial.html : 반복 사용되는 footer 영역을 분리 시켜 놓은 html 파일
     * index.html : '홈'에 해당하는 페이지
 - data : `handlebars` 모듈에서 컴파일 할 데이터를 저장해놓은 폴더 (JSON 사용)
