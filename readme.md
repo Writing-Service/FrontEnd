@@ -1,29 +1,64 @@
 # 이 프로젝트의 FrontEnd를 관리합니다.
 
-# Hierarchy
+# Hierarchy (0.2.1 기준)
 
 - app : `express`의 정적 위치
     - stat : 자주 사용될 파일들의 정적 위치
-        * card.css
-        * layout.css
+        * editor.css : writing에서 사용할 카드 타이머/에디터의 스타일 정의
+        * layout.css : 헤더에서 불러올 전체 페이지 공통부분의 스타일 정의
+        * thread-card.css : library/newsfeed에서 사용할 카드들의 내부 스타일 정의
         * writing.js :
             + `dueCheck` : 마감시간 카운터
-            + `editorManager` : 에디터 글자수 경고, 수정 메뉴(예정) 기능
+            + `editorManager` : 에디터 글자수 경고
         * library.js :
-            + `threadContentHandler` : 글묶음 카드 본문 로드와 애니메이션
-            + `threadLoadHandler` : 글묶음 카드 불러오기  
-        * test.js
-            + 디버그용 모바일뷰/데스크탑뷰 전환 기능 (타이틀 클릭/엔터키 입력시 작동)
+            + `threadHandler` : 글묶음 카드 글 로드와 로드시 애니메이션 (터치 슬라이드, 방향키, 버튼 클릭 등)
+                - `loadContent` 함수에서 서버에서 로드 처리 (미완)
+                
+        
     - writing
         * index.html : '글쓰기'에 해당하는 페이지
+            사용된 `handlebars` 치환자
+            + `written` : 첫 번째 글(제시문)을 작성하기 위한 자격을 얻기 위해 유저가 현재까지 작성완료한 글 수.
+            + `articles` : 글 오브젝트로 이루어진 배열
+                + `id` : 글의 고유 ID
+                + `author` : 작성자
+                + `datetime` : 작성일 writing.js의 `dueCheck`에서 사용할 수 있게 `javascript`의 `new Date() - YYYY-MM-DDTHH:MM:SS` 포멧 이용 바람. [자세히](https://www.w3schools.com/tags/att_time_datetime.asp)
+                + `date` : 표시할 작성일 문구 (ex. 어제, 일년 전, 방금 전...)
+                + `desc` : 글 본문
+                + `tempsave` : 유저의 에디터 임시 저장 기록
+
+
     - library
         * index.html : '라이브러리'에 해당하는 페이지
+            사용된 `handlebars` 치환자
+            + `articles` : 글 오브젝트로 이루어진 배열
+                + `id` : 글의 고유 ID
+                + `author` : 작성자
+                + `date` : 표시할 작성일 문구 (ex. 어제, 일년 전, 방금 전...)
+                + `desc` : 글 본문
+                + `star` : 글 묶음 참여자들의 별점 여부 오브젝트의 배열
+                    + `act` : 글의 인덱스 - library.js의 글 로드 처리에 이용. (7글 중 몇 번째 글인지 표시, 1부터 시작)
+                    + `rate` : 별점의 여부 (`boolean` 값이 들어감. - `true`: 꽉찬 별, `false`: 빈 별)
+                + `vote`
+                    + `vote.up` : 유저의 업 보트 참여 여부 (참일 경우 `checked`/ 아닐 경우 공백으로 처리)
+                    + `vote.down` : 유저의 다운 보트 참여 여부 (업 보트와 동일 형식)
+                    + `vote.score` : 글의 vote 수.
+
+
     - newsfeed
         * index.html : '뉴스피드'에 해당하는 페이지
+            library와 사용된 `handlebars` 치환자가 동일함.
+
 
     * header.partial.html : 반복 사용되는 header 영역을 분리 시켜 놓은 html 파일
+        사용된 `handlebars` 치환자
+        + `page_title` : 브라우저 탭에 표시될 타이틀
+        + `header_title` : 헤더영역 왼쪽에 표시될 타이틀
+        + `user`
+            + `user.name` : 필명
     * footer.partial.html : 반복 사용되는 footer 영역을 분리 시켜 놓은 html 파일
     * index.html : '홈'에 해당하는 페이지
+- data : `handlebars` 모듈에서 컴파일 할 데이터를 저장해놓은 폴더 (JSON 사용)
 - node_modules : Node.js 모듈
 * index.js : Node.js 서버 실행시 시작 포인트
 
@@ -32,7 +67,8 @@
 - `express` : 매우 좋은 모듈.
 - `mz` : `fs`를 포함한 node.js의 여러 기본 기능들을 더욱 유용하게 확장시켜주는 모듈.
 - `supervisor` : 서버 파일에 변경사항이 있을 시, 자동으로 서버를 재부팅 시켜주는 모듈.
-- `uglify-js` : 자바스크립트 압축 모듈 [자세히](https://github.com/mishoo/UglifyJS2)
+- `handlebars` : 동적서버의 데이터 컴파일처리를 쉽게 만들어주는 모듈.
+- ~~`uglify-js` : 자바스크립트 압축 모듈 [자세히](https://github.com/mishoo/UglifyJS2)~~
 - ~~babel : 아직 ECMAScript6 를 지원하지 않는 환경에서 ECMAScript6 Syntax를 사용 할 수 있게 해주는 모듈.~~
 
 # Description
