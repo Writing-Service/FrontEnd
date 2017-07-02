@@ -71,7 +71,11 @@ function handlebarsData(req) {
                     author: 'Author',
                     date: '어제',
                     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    vote: 12345,
+                    vote: {
+                        up: '',
+                        down: 'checked',
+                        score: 12345
+                    },
                     star: [
                         {
                             act: 1,
@@ -108,7 +112,11 @@ function handlebarsData(req) {
                     author: 'Athor',
                     date: '그제',
                     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    vote: 54321,
+                    vote: {
+                        up: 'checked',
+                        down: undefined,
+                        score: 54321
+                    },
                     star: [
                         {
                             act: 1,
@@ -145,7 +153,11 @@ function handlebarsData(req) {
                     author: 'Other',
                     date: '글피',
                     desc: '로렘 입솜 도롤 싵 아멭, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    vote: 0,
+                    vote: {
+                        up: '',
+                        down: undefined,
+                        score: 0
+                    },
                     star: [
                         {
                             act: 1,
@@ -188,7 +200,11 @@ function handlebarsData(req) {
                     author: 'Author',
                     date: '어제',
                     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    vote: 12345,
+                    vote: {
+                        up: '',
+                        down: 'checked',
+                        score: 12345
+                    },
                     star: [
                         {
                             act: 1,
@@ -225,7 +241,11 @@ function handlebarsData(req) {
                     author: 'Athor',
                     date: '그제',
                     desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    vote: 54321,
+                    vote: {
+                        up: 'checked',
+                        down: undefined,
+                        score: 54321
+                    },
                     star: [
                         {
                             act: 1,
@@ -262,7 +282,11 @@ function handlebarsData(req) {
                     author: 'Other',
                     date: '글피',
                     desc: '로렘 입솜 도롤 싵 아멭, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-                    vote: 0,
+                    vote: {
+                        up: '',
+                        down: undefined,
+                        score: 0
+                    },
                     star: [
                         {
                             act: 1,
