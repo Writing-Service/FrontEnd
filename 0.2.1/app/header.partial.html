@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-
-<!--
-    require
-        stat/layout.css
-
-
--->
 <html lang="ko">
 <head>
 	<meta charset="utf-8">
@@ -13,7 +6,6 @@
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="mobile-web-app-capable" content="yes">
 	<title>{{page_title}}</title>
-	<link rel="stylesheet" href="/stat/card.css">
     <link rel="stylesheet" href="/stat/layout.css">
 </head>
 
@@ -40,7 +32,6 @@
         <h1 class="header__title">{{header_title}}</h1>
         
         <nav class="header__tabs">
-
             <a class="item" href="/writing/">
                 <svg class="item-icon" height="24" viewBox="0 0 24 24" width="24">
                     <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
@@ -56,7 +47,7 @@
                 </svg>
                 <span class="item-span">라이브러리</span>
             </a>
-
+            
             <a class="item" href="/newsfeed/">
                 <svg class="item-icon" height="24" viewBox="0 0 24 24" width="24">
                     <path d="M12 10.9c-.61 0-1.1.49-1.1 1.1s.49 1.1 1.1 1.1c.61 0 1.1-.49 1.1-1.1s-.49-1.1-1.1-1.1zM12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm2.19 12.19L6 18l3.81-8.19L18 6l-3.81 8.19z"/>
@@ -64,7 +55,6 @@
                 </svg>
                 <span class="item-span">뉴스피드</span>
             </a>
-
         </nav>
         
         <a class="header__user">
@@ -87,4 +77,4 @@
     </div>
 </header>
 
-<main class="body-layout">
+<main class="body-layout card-list">
