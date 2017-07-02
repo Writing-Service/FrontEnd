@@ -17,7 +17,7 @@
         
     - writing
         * index.html : '글쓰기'에 해당하는 페이지
-            사용된 `handlebars` 치환자
+            + 사용된 `handlebars` 치환자
             + `written` : 첫 번째 글(제시문)을 작성하기 위한 자격을 얻기 위해 유저가 현재까지 작성완료한 글 수.
             + `articles` : 글 오브젝트로 이루어진 배열
                 + `id` : 글의 고유 ID
@@ -30,7 +30,7 @@
 
     - library
         * index.html : '라이브러리'에 해당하는 페이지
-            사용된 `handlebars` 치환자
+            + 사용된 `handlebars` 치환자
             + `articles` : 글 오브젝트로 이루어진 배열
                 + `id` : 글의 고유 ID
                 + `author` : 작성자
@@ -47,11 +47,11 @@
 
     - newsfeed
         * index.html : '뉴스피드'에 해당하는 페이지
-            library와 사용된 `handlebars` 치환자가 동일함.
+            + library와 사용된 `handlebars` 치환자가 동일함.
 
 
     * header.partial.html : 반복 사용되는 header 영역을 분리 시켜 놓은 html 파일
-        사용된 `handlebars` 치환자
+        + 사용된 `handlebars` 치환자
         + `page_title` : 브라우저 탭에 표시될 타이틀
         + `header_title` : 헤더영역 왼쪽에 표시될 타이틀
         + `user`
