@@ -15,35 +15,35 @@
                 - `loadContent` 함수에서 서버에서 로드 처리 (미완)    
     - writing
         * index.html : '글쓰기'에 해당하는 페이지
-            + 사용된 `handlebars` 치환자
+            + **사용된 `handlebars` 치환자**
             + `written` : 첫 번째 글(제시문)을 작성하기 위한 자격을 얻기 위해 유저가 현재까지 작성완료한 글 수.
-            + `articles` : 글 오브젝트로 이루어진 배열
+            + `articles` : 글 오브젝트로 이루어진 **배열**
                 + `id` : 글의 고유 ID
                 + `author` : 작성자
-                + `datetime` : 작성일 writing.js의 `dueCheck`에서 사용할 수 있게 `javascript`의 `new Date() - YYYY-MM-DDTHH:MM:SS` 포멧 이용 바람. [자세히](https://www.w3schools.com/tags/att_time_datetime.asp)
+                + `datetime` : 작성일 writing.js의 `dueCheck`에서 사용할 수 있게 `javascript`의 **`new Date() - YYYY-MM-DDTHH:MM:SS`** 포멧 이용 바람. [자세히](https://www.w3schools.com/tags/att_time_datetime.asp)
                 + `date` : 표시할 작성일 문구 (ex. 어제, 일년 전, 방금 전...)
                 + `desc` : 글 본문
                 + `tempsave` : 유저의 에디터 임시 저장 기록    
     - library
         * index.html : '라이브러리'에 해당하는 페이지
-            + 사용된 `handlebars` 치환자
-            + `articles` : 글 오브젝트로 이루어진 배열
+            + **사용된 `handlebars` 치환자**
+            + `articles` : 글 오브젝트로 이루어진 **배열**
                 + `id` : 글의 고유 ID
                 + `author` : 작성자
                 + `date` : 표시할 작성일 문구 (ex. 어제, 일년 전, 방금 전...)
                 + `desc` : 글 본문
-                + `star` : 글 묶음 참여자들의 별점 여부 오브젝트의 배열
-                    + `act` : 글의 인덱스 - library.js의 글 로드 처리에 이용. (7글 중 몇 번째 글인지 표시, 1부터 시작)
-                    + `rate` : 별점의 여부 (`boolean` 값이 들어감. - `true`: 꽉찬 별, `false`: 빈 별)
+                + `star` : 글 묶음 참여자들의 별점 여부 오브젝트의 **배열**
+                    + `act` : 글의 인덱스 - library.js의 글 로드 처리에 이용. (7글 중 몇 번째 글인지 표시, **1부터 시작**)
+                    + `rate` : 별점의 여부 (**`boolean` 값이 들어감.** - `true`: 꽉찬 별, `false`: 빈 별)
                 + `vote`
-                    + `vote.up` : 유저의 업 보트 참여 여부 (참일 경우 `checked`/ 아닐 경우 공백으로 처리)
+                    + `vote.up` : 유저의 업 보트 참여 여부 (**참일 경우 `checked`/ 아닐 경우 공백**으로 처리)
                     + `vote.down` : 유저의 다운 보트 참여 여부 (업 보트와 동일 형식)
                     + `vote.score` : 글의 vote 수    
     - newsfeed
         * index.html : '뉴스피드'에 해당하는 페이지
-            + library와 사용된 `handlebars` 치환자가 동일함.    
+            + **library와 사용된 `handlebars` 치환자가 동일함.**    
     * header.partial.html : 반복 사용되는 header 영역을 분리 시켜 놓은 html 파일
-        + 사용된 `handlebars` 치환자
+        + **사용된 `handlebars` 치환자**
         + `page_title` : 브라우저 탭에 표시될 타이틀
         + `header_title` : 헤더영역 왼쪽에 표시될 타이틀
         + `user`
