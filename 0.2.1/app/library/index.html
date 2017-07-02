@@ -20,8 +20,8 @@
             <time class="js--date sub-title">{{date}}</time>
         </div>
 
-        <div class="js--content sub-text">{{desc}}</div>
-        <div class="js--content-helper sub-text hidden"></div>
+        <div class="js--desc sub-text">{{desc}}</div>
+        <div class="js--animation-helper sub-text hidden"></div>
 
         <div class="action">
             <div class="star-layout">
@@ -32,7 +32,10 @@
                     <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>
                 {{/star}}
-                <i class="js--tc-star-index star__underline"></i>
+                <svg class="star__svg-underline" height="2" viewBox="0 0 24 2" width="24">
+                    <path d="M2 0h20v2h-20v-2z"/>
+                    <path d="M0 0h24v2h-24v-2z" fill="none"/>
+                </svg>
             </div>
 
             <div class="vote">
@@ -57,7 +60,7 @@
         </div>
 
         
-        <button class="js--swipe-prev swipe-button-prev inactive">
+        <button class="js--swipe-prev swipe-button-prev">
             <svg class="swipe-button__svg-prev" height="24" viewBox="0 0 24 24" width="24">
                 <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>
