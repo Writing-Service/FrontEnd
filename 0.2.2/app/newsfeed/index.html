@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="/stat/thread-card.css">
+<div class="flat-button-list nocard">
+    <button class="flat-button">Hot</button>
+    <button class="flat-button">New</button>
+</div>
+
+<div class="card-list">
+
+    {{#articles}}
+
+    <div id="{{id}}" class="js--card thread-card card">
+        <div class="primary-header">
+            <h2 class="js--tc-author primary-text">{{author}}</h2>
+            <time class="js--tc-date sub-title">{{date}}</time>
+        </div>
+
+        <div class="js--tc-content sub-text">{{desc}}</div>
+        <div class="js--tc-content-helper sub-text hidden"></div>
+
+        <div class="action">
+            <div class="star-layout">
+                {{#star}}
+                <svg class="star__svg" act="{{act}}" rate="{{rate}}" height="24" viewBox="0 0 24 24" width="24">
+                    <path class="star--true" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    <path class="star--false" d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/>
+                    <path d="M0 0h24v24H0z" fill="none"/>
+                </svg>
+                {{/star}}
+                <i class="js--tc-star-index star__underline"></i>
+            </div>
+
+            <div class="vote">
+                <label>
+                    <input class="js--vote-up vote__input-up hidden" type="radio" name="{{id}}" value="up" {{vote.up}}>
+                    <svg class="vote__svg-up" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </label>
+
+                <span>{{vote.score}}</span>
+
+                <label>
+                    <input class="js--vote-down vote__input-down hidden" type="radio" name="{{id}}" value="down" {{vote.down}}>
+                    <svg class="vote__svg-down" height="24" viewBox="0 0 24 24" width="24">
+                        <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
+                        <path d="M0 0h24v24H0z" fill="none"/>
+                    </svg>
+                </label>
+            </div>
+        </div>
+
+        
+        <button class="js--tc-previous swipe-button-prev inactive">
+            <svg class="swipe-button__svg-prev" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+        </button>
+        <button class="js--tc-next swipe-button-next">
+            <svg class="swipe-button__svg-next" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                <path d="M0 0h24v24H0z" fill="none"/>
+            </svg>
+        </button>
+    </div>
+
+    {{/articles}}
+
+</div>
+
+<script src="/stat/library.js"></script>

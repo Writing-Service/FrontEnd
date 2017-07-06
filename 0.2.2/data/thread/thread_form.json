@@ -1,0 +1,12 @@
+{
+    "thread_id": "",
+    "user_id" : "", // 지금 작성 중인 유저의 ID
+    "user_datetime" : "", // 지금 작성 중인 유저가 작성권을 획득한 date
+    "articles" : [
+        {
+            "author_id": "",
+            "datetime": "",
+            "content": ""
+        }
+    ]
+}

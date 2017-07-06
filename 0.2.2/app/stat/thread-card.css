@@ -1,0 +1,196 @@
+@charset "utf-8";
+
+.search {
+    padding: 8px 16px;
+    display: block;
+}
+
+.thread-card {
+    position: relative;
+}
+.m .thread-card{
+    padding: 0 32px;
+}
+
+.primary-header {
+    padding: 24px 16px 16px 16px;
+    position: relative;
+}
+
+    .primary-text {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+		color: rgba(0, 0, 0, .7);
+    }
+
+    .sub-title {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+.sub-text {
+    padding: 0 16px 24px 16px;
+
+    line-height: 1.5;
+    transition: height .2s ease,
+                opacity .2s ease;
+}
+
+
+.thread-card .action {
+    padding: 16px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.xs .thread-card .action,
+.s  .thread-card .action {
+    justify-content: flex-start;
+}
+
+.star-layout {
+    height: 24px;
+
+    position: relative;
+    display: flex;
+}
+    .star__svg {
+        fill: rgba(0, 0, 0, .54);
+
+        cursor: pointer;
+    }
+        .star__svg > * {
+            pointer-events: none;
+        }
+        .star__svg[rate="true"] > .star--false{
+            display: none;
+        }
+        .star__svg[rate="false"] > .star--true{
+            display: none;
+        }
+
+    .star__svg-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        fill: rgba(0, 0, 0, .54);
+        
+        transition: transform .2s ease;
+    }
+        .card[act="1"] .star__svg-underline {
+            transform: none;
+        }
+        .card[act="2"] .star__svg-underline {
+            transform: translateX(100%);
+        }
+        .card[act="3"] .star__svg-underline {
+            transform: translateX(200%);
+        }
+        .card[act="4"] .star__svg-underline {
+            transform: translateX(300%);
+        }
+        .card[act="5"] .star__svg-underline {
+            transform: translateX(400%);
+        }
+        .card[act="6"] .star__svg-underline {
+            transform: translateX(500%);
+        }
+        .card[act="7"] .star__svg-underline {
+            transform: translateX(600%);
+        }
+
+.vote {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+
+    display: flex;
+    align-items: center;
+}
+    .vote__svg-up,
+    .vote__svg-down {
+        fill: rgba(0, 0, 0, .54);
+
+        cursor: pointer;
+    }
+        .vote__svg-up > * ,
+        .vote__svg-down > * {
+            pointer-events: none;
+        }
+    .vote__svg-up:hover,
+    .vote__svg-down:hover {
+        fill: rgba(66, 165, 245, .54);
+    }
+    .vote__input-up:checked + .vote__svg-up,
+    .vote__input-down:checked + .vote__svg-down {
+        fill: rgb(66, 165, 245);
+    }
+
+
+
+.swipe-button-prev,
+.swipe-button-next {
+    width: 40px;
+    height: 100%;
+    margin: 0;
+    padding: 0 8px;
+
+    
+    position: absolute;
+    top: 0;
+
+    display: flex;
+    align-items: center;
+
+    opacity: 0;
+
+    transition: opacity .2s ease;
+    cursor: pointer;
+}
+.xs .swipe-button-prev,
+.s  .swipe-button-prev,
+.xs .swipe-button-next,
+.s  .swipe-button-next {
+    display: none;
+}
+.swipe-button-prev {
+    left: 0;
+}
+.swipe-button-next {
+    right: 0;
+}
+    .card:hover > .swipe-button-prev,
+    .card:hover > .swipe-button-next {
+        opacity: 1;
+    }
+    .swipe-button-prev:hover {
+        background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1));
+        background:    -moz-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1));
+        background:      -o-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1));
+        background:         linear-gradient(to left, rgba(0, 0, 0, 0) , rgba(0, 0, 0, .1));
+    }
+    .swipe-button-next:hover {
+        background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1));
+        background:    -moz-linear-gradient(right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1));
+        background:      -o-linear-gradient(right, rgba(0, 0, 0, 0), rgba(0, 0, 0, .1));
+        background:         linear-gradient(to right, rgba(0, 0, 0, 0) , rgba(0, 0, 0, .1));
+    }
+    .card[act="1"]:hover > .swipe-button-prev,
+    .card[act="7"]:hover > .swipe-button-next {
+        opacity: .33;
+        pointer-events: none;
+    }
+
+    .swipe-button__svg-prev,
+    .swipe-button__svg-next {
+        fill: rgba(0, 0, 0, .54);
+    }
+        .swipe-button__svg-prev > * ,
+        .swipe-button__svg-next > *  {
+            pointer-events: none;
+        }

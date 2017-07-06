@@ -1,0 +1,14 @@
+{
+    "user_id" : "", // same as file name
+    "user_pw" : "",
+    "login_token" : "",
+    "name" : "",
+    "docs" : {
+        "articles" : [
+            {"thread_id" : "", "saved" : ""}
+        ]
+    },
+    "contributes" : [
+        {"series_id" : "", "act" : ""}
+    ]
+}
