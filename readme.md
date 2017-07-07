@@ -20,7 +20,7 @@
             + `articles` : 글 오브젝트로 이루어진 **배열**
                 + `id` : 글의 고유 ID
                 + `author` : 작성자
-                + `datetime` : 작성일 writing.js의 `dueCheck`에서 사용할 수 있게 `javascript`의 **`new Date() - YYYY-MM-DDTHH:MM:SS`** 포멧 이용 바람. [자세히](https://www.w3schools.com/tags/att_time_datetime.asp)
+                + `datetime` : 작성일 writing.js의 `dueCheck`에서 사용할 수 있게 `javascript`의 **`new Date() - YYYY-MM-DDTHH:MM:SS`** 포멧 이용 바람. [자세히-1](https://www.w3schools.com/tags/att_time_datetime.asp) [자세히-2](https://www.w3schools.com/jsref/jsref_toisostring.asp)
                 + `date` : 표시할 작성일 문구 (ex. 어제, 일년 전, 방금 전...)
                 + `desc` : 글 본문
                 + `tempsave` : 유저의 에디터 임시 저장 기록    
