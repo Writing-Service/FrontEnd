@@ -1,0 +1,11 @@
+login page
+<br>
+admin으로 로그인 후
+1.5초 뒤에 이동
+<script>
+document.cookie = `user_id=admin; expires=${new Date(Date.now() + 10000)}; path=/;`;
+document.cookie = `user_token=admintoken; expires=${new Date(Date.now() + 10000)}; path=/;`;
+setTimeout(function() {
+    location.replace('/');
+}, 1500);
+</script>
