@@ -1,0 +1,14 @@
+{
+    "user_id" : "adminthreadauthor",
+    "user_pw" : "adminpw",
+    "login_token" : "admintoken",
+    "login_token_expires" : "",
+
+    "nickname" : "AdminThreadAuthor",
+    "docs" : {
+        "articles" : [
+        ]
+    },
+    "contributes" : [
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "thread_id": "adminthread",
+    "user_id" : "admin",
+    "user_datetime" : "2017-07-07T07:30:49.369Z",
+    "articles" : [
+        {
+            "author_id": "adminthreadauthor",
+            "datetime": "2017-07-07T07:52:49.369Z",
+            "content": "글내용"
+        }
+    ]
+}
