@@ -61,6 +61,21 @@ app.get(topLevelSection, (req, res) => {
 });
 
 
+app.post('/newthread/', (req, res) => {
+    const content = {
+        thread_id: 'thisisthreadid',
+        author: {
+            name: 'Authooooor'
+        },
+        datetime: new Date(),
+        date: '방금 전',
+        content: '이건 내용이닷 이거나 먹어랏! 빠샤',
+        save: '유저의 임시저장 내용'
+    };
+
+    res.send(JSON.stringify(content));
+});
+
 // Login Validation
 function userLogin(req){
     if (!req.cookies.user_id || !req.cookies.user_token) {
@@ -143,6 +158,25 @@ function getSeriesJSON(series_id){
     if (!series_id) {
         return false;
     } return JSON.parse(fs.readFileSync(`data/series/${series_id}.json`));
+}
+
+// ID Generator
+function createID() {
+    let a = Date.now(),
+        b,
+        c = '',
+        d = '0123456789abcdefghijklmnopqrstuvwxyz',
+        i;
+
+    for (i = 1; i*d.length < a; i *= d.length) {};
+
+    while (!(i < 1)) {
+        b = a%i;
+        c += d[(a - b)/i];
+        a = b;
+        i /= d.length;
+    }
+    return c;
 }
 
 app.use(express.static('app'));
