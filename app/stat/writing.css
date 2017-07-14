@@ -98,6 +98,10 @@
         transition: color .2s ease,
                     font-weight .2s ease;
     }
+    .editor .types--warn {
+        font-weight: bold;
+        color: rgb(211, 47, 47);
+    }
 
     .editor-action {
         width: 360px;

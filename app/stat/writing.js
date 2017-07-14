@@ -11,9 +11,9 @@ var card = {
 
     card.timer = document.querySelector(`#${card.id} .js--timer`);
     card.date = new Date(
-            document.querySelector(`#${card.id} .js--time`)
-                    .getAttribute('datetime')
-        );
+        document.querySelector(`#${card.id} .js--time`)
+                .getAttribute('datetime')
+    );
 
 
 function updateTimer(card) {
@@ -63,3 +63,24 @@ function onDueEnd(id){
 }
 
 window.setInterval(updateTimer(card), 1000);
+
+
+var editor = {
+    textarea: document.getElementById('js--em-editor'),
+    types: document.getElementById('js--em-types')
+}
+
+function updateEditorTypes() {
+    let types = editor.textarea.value.length;
+
+    editor.types.innerHTML = `${types}/700`;
+    
+    if (types > 700) {
+        editor.types.classList.add('types--warn');
+    } else {
+        editor.types.classList.remove('types--warn');
+    }
+}
+updateEditorTypes();
+
+editor.textarea.addEventListener('input', updateEditorTypes);
