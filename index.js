@@ -122,29 +122,35 @@ function handlebarsContext(req, res){
         return context;
     }
 
-    const user = getUserJSON(req.cookies.user_id);
-    
-    context.user = {
-        name: user.name,
-        recent_contributes: user.recent_contributes
-    };
+    try {
+        const user = getUserJSON(req.cookies.user_id);
+        
+        context.user = {
+            name: user.name,
+            recent_contributes: user.recent_contributes
+        };
 
-    if (req.item == 'writing' || req.item == ''){
-        if (req.item == '') {
-            req.query.id = 'adminthread';
+        if (req.item == 'writing' || req.item == ''){
+            if (req.item == '') {
+                req.query.id = 'adminthread';
+            }
+            let thread = getThreadJSON(req.query.id),
+                article = {
+                    id: thread.thread_id,
+                    author: user.name,
+                    datetime: thread.user_datetime,
+                    date: '어제',
+                    content: thread.articles[thread.articles.length - 1].content,
+                    saved: findObjectInArrayByKeyValue(user.docs.articles, 'thread_id', thread.thread_id).saved
+                };
+            context.article = article;
         }
-        let thread = getThreadJSON(req.query.id),
-            article = {
-                id: thread.thread_id,
-                author: user.name,
-                datetime: thread.user_datetime,
-                date: '어제',
-                content: thread.articles[thread.articles.length - 1].content,
-                saved: findObjectInArrayByKeyValue(user.docs.articles, 'thread_id', thread.thread_id).saved
-            };
-        context.article = article;
-    }
 
+        
+    } catch (err) {
+        throw err;
+        return '';
+    }
 
     return context;
 }
