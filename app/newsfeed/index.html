@@ -6,27 +6,30 @@
 
 <div class="card-list">
 
-    {{#articles}}
+       {{#articles}}
 
-    <div id="{{id}}" class="js--card thread-card card">
+    <div id="{{id}}" act="1" class="js--card thread-card card">
         <div class="primary-header">
-            <h2 class="js--tc-author primary-text">{{author}}</h2>
-            <time class="js--tc-date sub-title">{{date}}</time>
+            <h2 class="js--author primary-text">{{author}}</h2>
+            <time class="js--date sub-title" title="{{datetime}}">{{date}}</time>
         </div>
 
-        <div class="js--tc-content sub-text">{{desc}}</div>
-        <div class="js--tc-content-helper sub-text hidden"></div>
+        <div class="js--desc sub-text">{{content}}</div>
+        <div class="js--animation-helper sub-text hidden"></div>
 
         <div class="action">
             <div class="star-layout">
                 {{#star}}
-                <svg class="star__svg" act="{{act}}" rate="{{rate}}" height="24" viewBox="0 0 24 24" width="24">
+                <svg class="js--star star__svg" act="{{act}}" rate="{{satisfied}}" height="24" viewBox="0 0 24 24" width="24">
                     <path class="star--true" d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
                     <path class="star--false" d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.04 4.38.38-3.32 2.88 1 4.28L12 15.4z"/>
                     <path d="M0 0h24v24H0z" fill="none"/>
                 </svg>
                 {{/star}}
-                <i class="js--tc-star-index star__underline"></i>
+                <svg class="star__svg-underline" height="2" viewBox="0 0 24 2" width="24">
+                    <path d="M2 0h20v2h-20v-2z"/>
+                    <path d="M0 0h24v2h-24v-2z" fill="none"/>
+                </svg>
             </div>
 
             <div class="vote">
@@ -51,13 +54,13 @@
         </div>
 
         
-        <button class="js--tc-previous swipe-button-prev inactive">
+        <button class="js--swipe-prev swipe-button-prev">
             <svg class="swipe-button__svg-prev" height="24" viewBox="0 0 24 24" width="24">
                 <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
         </button>
-        <button class="js--tc-next swipe-button-next">
+        <button class="js--swipe-next swipe-button-next">
             <svg class="swipe-button__svg-next" height="24" viewBox="0 0 24 24" width="24">
                 <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
                 <path d="M0 0h24v24H0z" fill="none"/>
