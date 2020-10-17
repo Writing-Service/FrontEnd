@@ -1,0 +1,17 @@
+{
+    "user_id" : "", // same as file name
+    "user_pw" : "",
+    "login_token" : "",
+    "login_token_expires" : "",
+
+    "nickname" : "",
+    "docs" : {
+        "articles" : [
+            {"thread_id" : "", "saved" : ""}
+        ]
+    },
+    "recent_contributes": 2, // 제시문 작성을 위한 3개글 작성 완료 미션 수행 단계
+    "contributes" : [
+        {"series_id" : "", "act" : ""}
+    ]
+}

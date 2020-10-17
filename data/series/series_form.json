@@ -1,0 +1,15 @@
+{
+    "series_id": "",
+    "vote" : { // 해당 vote에 참여한 유저 id 리스트
+        "up" : ["user_id", "user_id", "user_id"],
+        "down" : ["user_id", "user_id", "user_id"]
+    },
+    "articles" : [
+        {
+            "author_id": "",
+            "datetime": "",
+            "content": "",
+            "satisfied" : "" // boolean
+        }
+    ]
+}

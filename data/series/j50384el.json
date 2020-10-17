@@ -1,0 +1,51 @@
+{
+    "series_id": "j50384el",
+    "vote" : {
+        "up" : ["admin"],
+        "down" : []
+    },
+    "articles" : [
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "서해진/너에게<br><br><span style=&#34;text-align: right;&#34;>들이면 된다.<br>지는 해를 깨우려 노력하지 말거라.<br><b>너는 달빛에 더 아름답다.</b></span>",
+            "satisfied" : true
+        },
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "어쩌면 좋지/윤보영<br><br>자다가 눈을 떴어<br>방안에 온통 네 생각만 떠다녀<br>생각을 내 보려고 창문을 열었어<br><br>그런데<br>창문 밖에 있던 네 생각들이<br>오히려 밀고 들어오는 거야<br><br>어쩌면 좋지.",
+            "satisfied" : false
+        },
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "봄날은 간다/구양숙<br>이렇든 흐린 날에<br>누가 문 앞에 와서<br>내 이름 불러주면 좋겠다.<br><br>보고 싶다고<br>꽃나무 아래라고<br>술 마시다가<br>목소리 보내오면 좋겠다.<br><br>난리 난 듯 온 천지가 꽃이라도<br>아직은 네가 더 이쁘다고<br>거짓말도 해주면 좋겠다.",
+            "satisfied" : false
+        },
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "사는 법/나태주<br><br>그리운 날은 그림을 그리고,<br>쓸쓸한 날은 음악을 들었다.<br><br>그리고도 남은 날은<br>너를 생각해야만 했다.",
+            "satisfied" : true
+        },
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "낮은 곳으로/이정하<br><br>낮은 곳에 있고 싶었다.<br>낮은 곳이라면 지상의 그 어디라도 좋다.<br><br>찰랑찰랑 물처럼 고여들어,<br>네 사랑을 온몸으로 받아들일 수만 있다면,<br>한 방울도 헛되이 새어 나가지 않게 할 수 있다면,<br><br>그래, 내가 낮은 곳에 있겠다는 건,<br>너를 위해 나를 온전히 비우겠다는 뜻이다.<br>나의  존재마저 너에게 흠뻑 주고 싶다는 뜻이다.<br><br>잠겨 죽어도 좋으니,<br>너는 물처럼 내게 밀려오라.",
+            "satisfied" : true
+        },
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "내가 너를/나태주<br><br>내가 너를<br>얼마나 좋아하는지<br>너는 몰라도 된다.<br><br>너를 좋아하는 마음은<br>오로지 나의 것이요,<br>나의 그리움은<br>나 혼자만의 것으로도<br>차고 넘치니까.<br><br>나는 이제<br>너 없이도 너를<br>좋아할 수 있다.",
+            "satisfied" : true
+        },
+        {
+            "author_id": "admin",
+            "datetime": "Wed Jul 12 2017 06:29:34 GMT+0900",
+            "content": "너에게/서해진<br><br>내려놓으면 된다.<br>구태여 네 마음을 괴롭히지 말거라.<br>부는 바람이 예뻐<br>그 눈부심에 웃던 네가 아니었니.<br><br>받아 들이면 된다.<br>지는 해를 깨우려 노력하지 말거라.<br>너는 달빛에 더 아름답다.",
+            "satisfied" : true
+        }
+    ]
+}

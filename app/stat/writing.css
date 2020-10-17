@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/* CARD */
+
+.primary-header {
+    padding: 24px 16px 16px 16px;
+    position: relative;
+}
+
+    .primary-text {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 1;
+		color: rgba(0, 0, 0, .7);
+    }
+
+    .sub-title {
+        font-size: 14px;
+        line-height: 1;
+    }
+
+.sub-text {
+    padding: 0 16px 24px 16px;
+}
+
+.chip {
+    width: auto;
+    height: 32px;
+
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    
+    display: flex;
+
+    border-radius: 16px;
+    background-color: rgba(0, 0, 0, .16);
+    transition: box-shadow .2s ease;
+}
+
+    .chip-icon {
+        width: 32px;
+        height: 32px;
+        padding: 4px;
+        
+        border-radius: 16px;
+        background-color: rgba(153, 153, 153, 1);
+        color: rgb(255, 255, 255);
+    }
+
+        .chip-icon__svg {
+            fill: rgb(255, 255, 255);
+        }
+
+    .chip-timer {
+        padding: 8px 12px 8px 8px;
+        
+        font-size: 14px;
+        line-height: 16px;
+        text-transform: uppercase;
+    }
+
+
+/* EDITOR */
+
+.editor-layout {
+    padding: 20px 16px 48px 16px;
+    position: relative;
+}
+
+    .editor textarea {
+        width: 100%;
+        min-height: 84px;
+        padding: 12px;
+
+        resize: vertical;
+
+        border: 2px solid rgba(0, 0, 0, .16);
+        border-radius: 2px;
+
+        transition: border-color .2s ease;
+    }
+    .editor textarea:hover {
+        border-color: rgba(66, 165, 245, .54);
+    }
+    .editor textarea:focus {
+        border-color: rgba(66, 165, 245, 1);
+    }
+
+
+    .editor .types {
+        position: absolute;
+        bottom: 20px;
+        right: 16px;
+
+        font-size: 12px;
+
+        transition: color .2s ease,
+                    font-weight .2s ease;
+    }
+    .editor .types--warn {
+        font-weight: bold;
+        color: rgb(211, 47, 47);
+    }
+
+    .editor-action {
+        width: 360px;
+        height: 40px;
+        margin-top: 24px;
+        margin-left: auto;
+
+        display: flex;
+        align-items: center;
+    }
+    .xs .editor-action,
+    .s  .editor-action {
+        width: 100%;
+
+        position: fixed;
+        bottom: 0;
+        left: 0;
+
+        box-shadow: 0 0px 6px rgba(0, 0, 0, .3);
+    }
+
+.editor-action .item {
+    width: 100%;
+    padding: 8px 16px;
+
+    display: inline-block;
+    font-size: 14px;
+    text-align: center;
+}
+
+.editor-action .divider {
+    height: 24px;
+    border-right: 1px solid rgba(0, 0, 0, .16);
+
+    flex-grow: 0;
+}
